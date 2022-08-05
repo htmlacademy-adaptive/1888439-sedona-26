@@ -12,7 +12,7 @@
           <img class="logo__image" src="img/logo.svg" alt="Логотип Седоны" width="185" height="96">
         </a>
 
-        <nav class="main-header__main-navigation main-navigation">
+        <nav class="main-header__navigation main-navigation">
           <ul class="main-navigation__list">
             <li class="main-navigation__item">
               <a class="main-navigation__link" href="index.html">Главная</a>
@@ -29,7 +29,7 @@
           </ul>
         </nav>
 
-        <button class="main-header__burger-button burger-button" type="button"><span class="visually-hidden">Открыть меню</span></button>
+        <button class="main-header__navigation-toggle-button" type="button"><span class="visually-hidden">Открыть меню</span></button>
       </header>
 
       <main>
@@ -37,10 +37,11 @@
           <img class="hero__content" src="img/sedona.svg" lang="en" alt="Sedona" width="229" height="39">
         </div>
 
-        <h1 class="main-title">Оставьте свой отзыв</h1>
+        <h1 class="page__title heading">Оставьте свой отзыв</h1>
+        <p class="page__description section-description">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
 
         <form class="review-form" action="https://echo.htmlacademy.ru" method="post">
-          <h2 class="review-form__title">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях</h2>
+          <h2 class="visually-hidden">Форма отзыва</h2>
 
           <div class="row">
             <fieldset class="review-form__field-group field-group row__column">
@@ -52,13 +53,13 @@
                     <input class="text-field__input" type="text" name="first-name" id="first-name" placeholder="Имя" value="Пётр" required>
                   </div>
                 </li>
-                <li>
+                <li class="field-group__item">
                   <div class="text-field">
                     <label class="text-field__label" for="last-name">Фамилия*:</label>
-                    <input class="text-firld__input" type="text" name="last-name" id="last-name" placeholder="Фамилия" value="Пустота" required>
+                    <input class="text-field__input" type="text" name="last-name" id="last-name" placeholder="Фамилия" value="Пустота" required>
                   </div>
                 </li>
-                <li>
+                <li class="field-group__item">
                   <div class="text-field">
                     <label class="text-field__label" for="patronymic">Отчество:</label>
                     <input class="text-field__input" type="text" name="patronymic" id="patronymic" placeholder="Отчество" value="Викторович">
@@ -140,13 +141,10 @@
             </ul>
           </fieldset>
 
-          <fieldset class="review-form__field-group field-group">
-            <legend class="field-group__legend">Опишите свои эмоции:</legend>
-            <div class="textarea-field">
-              <label class="visually-hidden" for="emotions">Ваши эмоции:</label>
-              <textarea class="textarea-field__input" name="emotions" id="emotions" placeholder="Опишите подробно все свои восторги"></textarea>
-            </div>
-          </fieldset>
+          <div class="review-form__emotions-field emotions-field">
+            <label class="emotions-field__label">Опишите свои эмоции:</label>
+            <textarea class="emotions-field__input" name="emotions" id="emotions" placeholder="Опишите подробно все свои восторги"></textarea>
+          </div>
 
           <button class="review-form__submit-button button" type="submit">Отправить отзыв</button>
 
@@ -182,19 +180,19 @@
     </div>
 
     <div class="modal modal--closed">
-      <section class="modal__content error-modal">
-        <h2 class="error-modal__title">Что-то пошло не так!</h2>
-        <p class="error-modal__descritpion">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
-        <button class="error-modal__button button" type="button">Ок</button>
+      <section class="modal__content">
+        <h2 class="modal__title">Что-то пошло не так!</h2>
+        <p class="modal__descritpion">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
+        <button class="modal__button button" type="button">Ок</button>
       </section>
     </div>
 
     <div class="modal modal--closed">
-      <section class="modal__content ok-modal">
-        <h2 class="ok-modal__title">Ваш отзыв отправлен!</h2>
-        <p class="ok-modal__description">Спасибо за ваше участие, ваш отзыв уже поступил к нам. В ближайшее время мы опубликуем его на сайте.</p>
-        <div class="ok-modal__button-wrapper">
-          <button class="ok-modal__button button" type="button">Закрыть окно</button>
+      <section class="modal__content">
+        <h2 class="modal__title">Ваш отзыв отправлен!</h2>
+        <p class="modal__description">Спасибо за ваше участие, ваш отзыв уже поступил к нам. В ближайшее время мы опубликуем его на сайте.</p>
+        <div class="modal__button-wrapper">
+          <button class="modal__button button" type="button">Закрыть окно</button>
         </div>
       </section>
     </div>
