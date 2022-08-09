@@ -1,0 +1,64 @@
+@use "../mixins";
+@use "./subadvantages";
+
+.advantages__heading {
+  margin: 0;
+  margin-bottom: 32px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include mixins.normal-font;
+  text-align: center;
+}
+
+.advantages__list {
+  padding: 0;
+  counter-reset: advantage-counter;
+  list-style-type: none;
+}
+
+.advantages__text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  &::before {
+    counter-increment: advantage-counter;
+    content: "— №" counter(advantage-counter) " —";
+    display: block;
+    margin-bottom: 17px;
+
+    @include mixins.normal-font;
+    text-align: center;
+  }
+}
+
+
+.advantages__title {
+  order: -1;
+  margin: 0;
+  margin-bottom: 11px;
+
+  @include mixins.medium-font;
+  text-align: center;
+}
+
+.advantages__description {
+  margin: 0;
+
+  @include mixins.normal-font;
+  text-align: center;
+}
+
+.advantages__image-link {
+  display: block;
+}
+
+.advantages__image {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}

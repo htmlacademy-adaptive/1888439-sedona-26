@@ -1,0 +1,17 @@
+@use "../variables";
+@use "./photo";
+
+
+.gallery__list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.gallery__item {
+  border-top: 1px solid variables.$grey-color-medium;
+
+  &:last-of-type {
+    border-bottom: 1px solid variables.$grey-color-medium;
+  }
+}

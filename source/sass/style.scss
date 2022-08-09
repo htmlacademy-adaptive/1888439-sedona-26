@@ -1,1 +1,20 @@
 // Начните писать стили здесь
+@use "./fonts";
+@use "./variables";
+@use "./base";
+@use "./blocks/main-header";
+@use "./blocks/main-footer";
+@use "./blocks/page";
+@use "./blocks/container";
+@use "./blocks/hero";
+@use "./blocks/advantages";
+@use "./blocks/booking";
+@use "./blocks/location";
+@use "./blocks/gallery";
+@use "./blocks/suggestion";
+@use "./blocks/review-form";
+
+body {
+  margin: 0;
+  background-color: variables.$grey-color;
+}

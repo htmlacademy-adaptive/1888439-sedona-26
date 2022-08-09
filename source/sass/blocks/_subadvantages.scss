@@ -1,0 +1,18 @@
+@use "../mixins";
+
+.subadvantages {
+  padding: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  list-style-type: none;
+}
+
+.subadvantages__title {
+  @include mixins.medium-font;
+  text-align: center;
+}
+
+.subadvantages__description {
+  @include mixins.normal-font;
+  text-align: center;
+}

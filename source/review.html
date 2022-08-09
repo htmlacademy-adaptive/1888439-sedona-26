@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Форма отзыва</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body class="page__body">
@@ -33,7 +34,7 @@
       </header>
 
       <main>
-        <div class="hero">
+        <div class="page__hero hero">
           <img class="hero__content" src="img/sedona.svg" lang="en" alt="Sedona" width="229" height="39">
         </div>
 
@@ -92,19 +93,19 @@
             <ul class="field-group__list">
               <li class="field-group__item">
                 <div class="radio-field">
-                  <input class="radio-field__input" type="radio" name="impression" id="positive-impression" value="positive" checked>
+                  <input class="radio-field__input visually-hidden" type="radio" name="impression" id="positive-impression" value="positive" checked>
                   <label class="radio-field__label" for="positive-impression">Скорее положительное</label>
                 </div>
               </li>
               <li class="field-group__item">
                 <div class="radio-field">
-                  <input class="radio-field__input" type="radio" name="impression" id="negative-impression" value="negative">
+                  <input class="radio-field__input visually-hidden" type="radio" name="impression" id="negative-impression" value="negative">
                   <label class="radio-field__label" for="negative-impression">Скорее отрицательное</label>
                 </div>
               </li>
               <li class="field-group__item">
                 <div class="radio-field">
-                  <input class="radio-field__input" type="radio" name="impression" id="neutral-impression" value="neutral">
+                  <input class="radio-field__input visually-hidden" type="radio" name="impression" id="neutral-impression" value="neutral">
                   <label class="radio-field__label" for="neutral-impression">Затрудняюсь ответить</label>
                 </div>
               </li>
@@ -116,25 +117,25 @@
             <ul class="field-group__list">
               <li class="field-group__item">
                 <div class="checkbox-field">
-                  <input class="checkbox-field__input" type="checkbox" name="devils-bridge" id="devils-bridge" checked>
+                  <input class="checkbox-field__input visually-hidden" type="checkbox" name="devils-bridge" id="devils-bridge" checked>
                   <label class="checkbox-field__label" for="devils-bridge">Мост дьявола</label>
                 </div>
               </li>
               <li class="field-group__item">
                 <div class="checkbox-field">
-                  <input class="checkbox-field__input" type="checkbox" name="bell-rock" id="bell-rock" checked>
+                  <input class="checkbox-field__input visually-hidden" type="checkbox" name="bell-rock" id="bell-rock" checked>
                   <label class="checkbox-field__label" for="bell-rock">Гора-Колокол</label>
                 </div>
               </li>
               <li class="field-group__item">
                 <div class="checkbox-field">
-                  <input class="checkbox-field__input" type="checkbox" name="slide-park" id="slide-park" checked>
+                  <input class="checkbox-field__input visually-hidden" type="checkbox" name="slide-park" id="slide-park" checked>
                   <label class="checkbox-field__label" for="slide-park">Слайд-парк</label>
                 </div>
               </li>
               <li class="field-group__item">
                 <div class="checkbox-field">
-                  <input class="checkbox-field__input" type="checkbox" name="red-rocks" id="red-rocks">
+                  <input class="checkbox-field__input visually-hidden" type="checkbox" name="red-rocks" id="red-rocks">
                   <label class="checkbox-field__label" for="red-rocks">Красные скалы</label>
                 </div>
               </li>
@@ -196,5 +197,6 @@
         </div>
       </section>
     </div>
+    <script src="js/script.js"></script>
   </body>
 </html>

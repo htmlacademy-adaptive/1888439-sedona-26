@@ -1,0 +1,14 @@
+@use "../variables";
+@use "../mixins";
+
+.button {
+  display: block;
+  padding: 16px 20px;
+
+  @include mixins.large-font(variables.$white);
+  text-decoration: none;
+  text-align: center;
+
+  background-color: variables.$main-color;
+  border: none;
+}

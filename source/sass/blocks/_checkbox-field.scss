@@ -1,0 +1,23 @@
+@use "../variables";
+@use "../mixins";
+
+.checkbox-field__label {
+  position: relative;
+  display: block;
+  padding-block: 10px;
+  padding-left: 62px;
+
+  @include mixins.medium-font($case: none);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    display: block;
+    width: 46px;
+    height: 46px;
+    transform: translateY(-50%);
+    background-color: variables.$grey-color;
+  }
+}

@@ -1,0 +1,37 @@
+@use "../variables";
+@use "./blocks/field-group";
+@use "./textarea-field";
+@use "./radio-field";
+@use "./checkbox-field";
+
+.review-form {
+  border-top: 1px solid variables.$grey-color-medium;
+}
+
+.review-form__field-group {
+  margin-top: 24px;
+  // margin-top: 30px;
+  // box-shadow:
+  //   0 -29px 0 0 variables.$white,
+  //   0 -30px 0 0 variables.$grey-color;
+}
+
+.review-form__note {
+  padding-inline: 20px;
+  text-align: end;
+
+  font-family: variables.$main-font-family;
+  font-size: 12px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: #333333;
+}
+
+.review-form__emotions-field {
+  margin-bottom: 56px;
+}
+
+.review-form__submit-button {
+  width: calc(100% - 40px);
+  margin: 0 auto;
+}

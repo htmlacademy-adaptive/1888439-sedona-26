@@ -1,0 +1,26 @@
+@use "../mixins";
+@use "./video-player";
+
+.suggestion {
+  padding-top: 17px;
+}
+
+.suggestion__title {
+  margin: 0;
+  margin-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include mixins.large-font;
+  text-align: center;
+}
+
+.suggestion__description {
+  margin: 0;
+  margin-bottom: 38px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include mixins.normal-font;
+  text-align: center;
+}

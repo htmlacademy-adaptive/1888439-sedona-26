@@ -1,0 +1,15 @@
+@use "../variables";
+
+.socials {
+  display: grid;
+  padding: 0;
+  width: 156px;
+  min-height: 48px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  list-style-type: none;
+}
+
+.socials__item {
+  background-color: variables.$main-color;
+}

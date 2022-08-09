@@ -1,0 +1,19 @@
+@use "../mixins";
+
+// .like {
+// }
+
+.like__button {
+  display: inline-block;
+  width: 23px;
+  height: 21px;
+  vertical-align: bottom;
+}
+
+.like__counter {
+  display: inline-block;
+  margin: 0;
+
+  @include mixins.normal-font($weight: 700);
+  vertical-align: bottom;
+}

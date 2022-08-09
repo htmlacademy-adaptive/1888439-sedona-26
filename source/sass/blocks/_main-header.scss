@@ -1,0 +1,27 @@
+@use "./main-navigation";
+
+.main-header {
+  position: relative;
+  min-height: 56px;
+}
+
+.main-header__logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main-header__navigation {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.main-header__navigation-toggle-button {
+  position: absolute;
+  top: 17px;
+  right: 20px;
+  display: block;
+  width: 22px;
+  height: 22px;
+}
