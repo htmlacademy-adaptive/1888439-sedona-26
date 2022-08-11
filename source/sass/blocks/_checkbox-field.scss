@@ -21,3 +21,10 @@
     background-color: variables.$grey-color;
   }
 }
+
+.checkbox-field__input:checked ~ .checkbox-field__label::before {
+  width: 16px;
+  height: 16px;
+  background-color: #333333;
+  border: 15px solid variables.$grey-color;
+}

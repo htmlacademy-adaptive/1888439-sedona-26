@@ -11,7 +11,7 @@
 .gallery__item {
   border-top: 1px solid variables.$grey-color-medium;
 
-  &:last-of-type {
+  &:last-child {
     border-bottom: 1px solid variables.$grey-color-medium;
   }
 }

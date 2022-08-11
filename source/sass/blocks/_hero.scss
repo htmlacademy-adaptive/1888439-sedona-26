@@ -1,7 +1,9 @@
 .hero {
   padding-top: 52px;
   padding-bottom: 67px;
-  background-image: url("../img/intro-triangle.svg"), url("../img/mountains-mobile.jpg");
+  background-image:
+    url("../img/intro-triangle.svg"),
+    url("../img/mountains-mobile.jpg");
   background-position: left 50% bottom 0, center top;
   background-repeat: no-repeat, no-repeat;
   background-size: auto, cover;

@@ -1,6 +1,4 @@
-// Начните писать стили здесь
 @use "./fonts";
-@use "./variables";
 @use "./base";
 @use "./blocks/main-header";
 @use "./blocks/main-footer";
@@ -13,8 +11,4 @@
 @use "./blocks/gallery";
 @use "./blocks/suggestion";
 @use "./blocks/review-form";
-
-body {
-  margin: 0;
-  background-color: variables.$grey-color;
-}
+@use "./blocks/modal";

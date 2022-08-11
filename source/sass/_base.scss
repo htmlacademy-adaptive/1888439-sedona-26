@@ -1,3 +1,15 @@
+@use "./variables";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: variables.$grey-color;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
