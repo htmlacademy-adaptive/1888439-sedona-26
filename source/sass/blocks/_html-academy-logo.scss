@@ -1,0 +1,12 @@
+@use "../mixins";
+
+.html-academy-logo {
+  @include mixins.normal-font;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.html-academy-logo__image {
+  vertical-align: middle;
+}

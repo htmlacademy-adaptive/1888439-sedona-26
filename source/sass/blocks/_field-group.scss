@@ -1,0 +1,34 @@
+@use "../variables";
+@use "../mixins";
+@use "./text-field";
+
+.field-group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.field-group__legend {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  padding-inline: 20px;
+
+  @include mixins.medium-font;
+  text-align: center;
+}
+
+.field-group__list {
+  margin: 0;
+  padding: 0;
+  padding-inline: 20px;
+  list-style-type: none;
+}
+
+.field-group__item {
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin: 0;
+  }
+}

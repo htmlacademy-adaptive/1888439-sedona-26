@@ -1,0 +1,8 @@
+@use "../variables";
+
+.social-button {
+  display: block;
+  width: 48px;
+  height: 48px;
+  background-color: variables.$main-color;
+}

@@ -2,27 +2,9 @@
 <html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Седона</title>
-    <style>
-      .advantages {
-        counter-reset: advantage-counter;
-      }
-
-      .advantages__text-content {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .advantages__text-content::before {
-        counter-increment: advantage-counter;
-        content: "— №" counter(advantage-counter) " —";
-        display: block;
-      }
-
-      .advantages__title {
-        order: -1;
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body class="page__body">
@@ -53,7 +35,7 @@
       </header>
 
       <main>
-        <div class="hero hero--index">
+        <div class="page__hero hero hero--index">
           <img class="hero__content" src="img/welcome.svg" lang="en" alt="Welcome to the gorgeous Sedona! 'Because the Grand Canyon sucks!'" width="282" height="214">
         </div>
 
@@ -153,9 +135,10 @@
         </ul>
 
         <a class="main-footer__html-academy-logo html-academy-logo" href="https://htmlacademy.ru" target="_blank">
-          Разработано: <img class="html-academy-logo__image" src="img/htmlacademy.svg" alt="Логотип HTML Academy" width="27" height="34">
+          Разработано <img class="html-academy-logo__image" src="img/htmlacademy.svg" alt="Логотип HTML Academy" width="27" height="34">
         </a>
       </footer>
     </div>
+    <script src="js/script.js"></script>
   </body>
 </html>

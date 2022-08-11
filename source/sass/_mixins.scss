@@ -1,0 +1,29 @@
+@use "./variables";
+
+
+@mixin normal-font($color: #333333, $weight: 400, $case: uppercase) {
+  font-family: variables.$main-font-family;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: $weight;
+  text-transform: $case;
+  color: $color;
+}
+
+@mixin medium-font($color: variables.$black, $case: uppercase) {
+  font-family: variables.$main-font-family;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: $case;
+  color: $color;
+}
+
+@mixin large-font($color: variables.$black) {
+  font-family: variables.$main-font-family;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: $color;
+}
