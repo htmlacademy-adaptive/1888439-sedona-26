@@ -350,6 +350,17 @@ body {
 
 .subadvantages__item {
   box-sizing: border-box;
+  padding-block: 15px;
+}
+
+.subadvantages__item:first-child {
+  -webkit-padding-before: 31px;
+          padding-block-start: 31px;
+}
+
+.subadvantages__item:last-child {
+  -webkit-padding-after: 52px;
+          padding-block-end: 52px;
 }
 
 .subadvantages__title {
@@ -384,6 +395,11 @@ body {
 
   .subadvantages__item {
     min-height: 330px;
+  }
+
+  .subadvantages__item,
+.subadvantages__item:first-child,
+.subadvantages__item:last-child {
     padding-block: 158px 30px;
     padding-inline: 30px;
   }
@@ -421,12 +437,12 @@ body {
 }
 
 .advantages__text-content {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-block: 40px;
+  padding-inline: 20px;
   background-color: #eeeeee;
 }
 .advantages__text-content::before {
