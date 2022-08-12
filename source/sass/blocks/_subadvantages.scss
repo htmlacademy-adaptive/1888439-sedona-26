@@ -10,6 +10,15 @@
 
 .subadvantages__item {
   box-sizing: border-box;
+  padding-block: 15px;
+}
+
+.subadvantages__item:first-child {
+  padding-block-start: 31px;
+}
+
+.subadvantages__item:last-child {
+  padding-block-end: 52px;
 }
 
 .subadvantages__title {
@@ -36,6 +45,11 @@
 
   .subadvantages__item {
     min-height: 330px;
+  }
+
+  .subadvantages__item,
+  .subadvantages__item:first-child,
+  .subadvantages__item:last-child {
     padding-block: 158px 30px;
     padding-inline: 30px;
   }

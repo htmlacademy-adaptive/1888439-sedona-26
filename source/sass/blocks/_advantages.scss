@@ -25,12 +25,12 @@
 }
 
 .advantages__text-content {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-block: 40px;
+  padding-inline: 20px;
   background-color: #eeeeee;
 
   &::before {
