@@ -1,5 +1,23 @@
+@use "../variables";
+
+.map {
+  position: relative;
+}
+
 .map__content {
   display: block;
   width: 100%;
   object-fit: cover;
+}
+
+.map__marker {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  width: 27px;
+  height: 27px;
+  margin: auto;
+  background-color: variables.$main-color;
+  border: 5px solid variables.$white;
+  border-radius: 50%;
 }

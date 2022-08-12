@@ -40,3 +40,40 @@
     color: rgba(variables.$white, 0.3);
   }
 }
+
+@media (min-width: variables.$tablet-width) {
+  .main-navigation {
+    display: block;
+    background-color: transparent;
+  }
+
+  .main-navigation--closed {
+    display: block;
+  }
+
+  .main-navigation__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 185px 1fr 1fr;
+    grid-auto-flow: dense;
+
+    &::before {
+      content: "";
+      display: block;
+      grid-column: 3;
+      grid-row: span 2;
+    }
+  }
+
+  .main-navigation__item {
+    box-shadow: none;
+    border: none;
+  }
+
+  .main-navigation__link {
+    padding-top: 18px;
+    padding-bottom: 17px;
+    color: variables.$black;
+    font-size: 14px;
+    line-height: 21px;
+  }
+}

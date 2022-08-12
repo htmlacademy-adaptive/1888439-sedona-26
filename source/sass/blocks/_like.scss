@@ -1,3 +1,4 @@
+@use "../variables";
 @use "../mixins";
 
 .like__button {
@@ -11,6 +12,16 @@
   display: inline-block;
   margin: 0;
 
-  @include mixins.normal-font($weight: 700);
+  @include mixins.normal-font($color: variables.$black, $weight: 700);
   vertical-align: bottom;
+}
+
+@media (min-width: variables.$desktop-width) {
+  .like {
+    color: variables.$white;
+  }
+
+  .like__counter {
+    color: variables.$white;
+  }
 }

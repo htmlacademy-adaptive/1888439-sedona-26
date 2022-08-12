@@ -21,3 +21,27 @@
   margin: 0 auto;
   margin-bottom: 40px;
 }
+
+@media (min-width: variables.$tablet-width) {
+  .main-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 36px;
+    padding-inline: 60px;
+  }
+
+  .main-footer__hashtag {
+    margin: 0;
+  }
+
+  .main-footer__socials-list {
+    margin: 0;
+  }
+}
+
+@media (min-width: variables.$desktop-width) {
+  .main-footer {
+    padding-inline: 120px;
+  }
+}

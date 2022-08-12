@@ -15,3 +15,28 @@
     border-bottom: 1px solid variables.$grey-color-medium;
   }
 }
+
+@media (min-width: variables.$tablet-width) {
+  .gallery__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery__item {
+    border: none;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  .gallery__item:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: variables.$desktop-width) {
+  .gallery__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

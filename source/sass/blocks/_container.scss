@@ -3,8 +3,11 @@
 .page__container {
   display: flex;
   flex-direction: column;
+  max-width: variables.$desktop-width;
+  margin: 0 auto;
   min-height: 100%;
   background-color: variables.$white;
+  box-shadow: 0 5px 15px rgba(0, 1, 1, 0.2);
 
   main {
     flex-grow: 1;

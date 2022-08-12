@@ -1,3 +1,4 @@
+@use "../variables";
 @use "./main-navigation";
 
 .main-header {
@@ -24,4 +25,14 @@
   display: block;
   width: 22px;
   height: 22px;
+}
+
+@media (min-width: variables.$tablet-width) {
+  .main-header__navigation {
+    position: static;
+  }
+
+  .main-header__navigation-toggle-button {
+    display: none;
+  }
 }

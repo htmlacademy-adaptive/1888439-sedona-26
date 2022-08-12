@@ -38,3 +38,51 @@
   width: 100%;
   object-fit: cover;
 }
+
+@media (min-width: variables.$tablet-width) {
+  .photo {
+    padding: 0;
+  }
+
+  .photo__description {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    grid-template-rows: repeat(2, min-content);
+    padding-inline: 20px;
+    padding-block: 22px 15px;
+    background-color: variables.$grey-color;
+  }
+
+  .photo__author {
+    margin: 0;
+  }
+
+  .photo__like {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    justify-self: end;
+    align-self: center;
+  }
+}
+
+@media (min-width: variables.$desktop-width) {
+  .photo {
+    position: relative;
+  }
+
+  .photo__description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(variables.$black, 0.3);
+  }
+
+  .photo__title {
+    color: variables.$white;
+  }
+
+  .photo__author {
+    color: variables.$white;
+  }
+}
