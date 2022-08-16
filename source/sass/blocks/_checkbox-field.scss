@@ -5,7 +5,7 @@
   position: relative;
   display: block;
   padding-block: 10px;
-  padding-left: 62px;
+  padding-inline: 62px 20px;
 
   @include mixins.medium-font($case: none);
 

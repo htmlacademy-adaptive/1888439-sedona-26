@@ -2,9 +2,9 @@
 @use "../mixins";
 
 .textarea-field {
-  padding-top: 24px;
-  border-top: 1px solid variables.$grey-color;
+  padding-block: 24px;
   padding-inline: 20px;
+  border-top: 1px solid variables.$grey-color;
 }
 
 .textarea-field__label {
@@ -30,5 +30,11 @@
 
   &::placeholder {
     color: rgba(variables.$black, 0.3);
+  }
+}
+
+@media (min-width: variables.$tablet-width) {
+  .textarea-field {
+    border-top: none;
   }
 }
