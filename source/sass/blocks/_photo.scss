@@ -46,8 +46,9 @@
 
   .photo__description {
     display: grid;
-    grid-template-columns: 1fr 100px;
+    grid-template-columns: 1fr max-content;
     grid-template-rows: repeat(2, min-content);
+    column-gap: 20px;
     padding-inline: 20px;
     padding-block: 22px 15px;
     background-color: variables.$grey-color;

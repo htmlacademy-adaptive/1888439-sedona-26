@@ -1,8 +1,30 @@
 @use "../variables";
+@use "../mixins";
 
 .social-button {
   display: block;
   width: 48px;
   height: 48px;
   background-color: variables.$main-color;
+
+  &:hover,
+  &:focus-visible {
+    background-color: variables.$hover-button-color;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:active {
+    @include mixins.button-active;
+  }
+
+  &--disabled,
+  &--disabled:hover,
+  &--disabled:focus-visible,
+  &--disabled:active {
+    color: variables.$white;
+    background-color: variables.$disabled-button-color;
+  }
 }

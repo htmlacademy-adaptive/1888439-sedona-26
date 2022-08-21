@@ -5,3 +5,16 @@
 .logo__image {
   display: block;
 }
+
+.logo:hover .logo__image,
+.logo:focus-visible .logo__image {
+  filter: opacity(0.8);
+}
+
+.logo:focus-visible {
+  outline: none;
+}
+
+.logo:active .logo__image {
+  filter: opacity(0.5);
+}

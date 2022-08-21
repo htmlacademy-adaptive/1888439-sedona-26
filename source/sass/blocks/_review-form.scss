@@ -1,4 +1,5 @@
 @use "../variables";
+@use "../mixins";
 @use "./row";
 @use "./field-group";
 @use "./textarea-field";
@@ -24,9 +25,7 @@
 }
 
 .review-form__emotions-field {
-  margin: 0 auto;
   margin-bottom: 32px;
-  max-width: variables.$tablet-width;
 }
 
 .review-form__footer {
@@ -60,6 +59,10 @@
   .review-form__row,
   .review-form__field-group {
     margin-bottom: 48px;
+  }
+
+  .review-form__note {
+    @include mixins.normal-font-size;
   }
 }
 

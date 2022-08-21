@@ -55,8 +55,10 @@
   }
 
   .field-group__legend {
-    @include mixins.large-font-size;
     width: 400px;
+    padding: 0;
+
+    @include mixins.large-font-size;
   }
 
   .row .field-group__legend {

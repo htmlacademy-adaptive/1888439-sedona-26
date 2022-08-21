@@ -43,3 +43,13 @@
   text-transform: uppercase;
   color: $color;
 }
+
+@mixin button-active {
+  color: rgba(variables.$white, 0.3);
+  background-color: variables.$active-button-color;
+}
+
+@mixin text-field-active {
+  background-color: variables.$white;
+  box-shadow: inset 0 0 0 4px variables.$grey-color-medium;
+}

@@ -15,10 +15,16 @@
   text-align: center;
 }
 
+.textarea-field__label:hover ~ .textarea-field__input {
+  background-color: variables.$grey-color;
+}
+
 .textarea-field__input {
   box-sizing: border-box;
   display: block;
+  margin: 0 auto;
   width: 100%;
+  max-width: variables.$tablet-width;
   min-height: 150px;
   padding: 16px;
   resize: none;
@@ -31,10 +37,52 @@
   &::placeholder {
     color: rgba(variables.$black, 0.3);
   }
+
+  &:hover,
+  &:focus-visible {
+    background-color: variables.$hover-text-field;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:active {
+    @include mixins.text-field-active;
+  }
 }
 
 @media (min-width: variables.$tablet-width) {
   .textarea-field {
+    padding-inline: 0;
     border-top: none;
+  }
+
+  .textarea-field__label {
+    position: relative;
+    padding-inline: calc(50% - 180px) calc(50% - 180px);
+    margin-block-end: 28px;
+
+    @include mixins.large-font-size;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(50% - 1px);
+      display: block;
+      height: 1px;
+      background-color: #bdbdbd;
+    }
+
+    &::before {
+      left: 0;
+      right: calc(50% + 200px);
+    }
+
+    &::after {
+      left: calc(50% + 200px);
+      right: 0;
+    }
   }
 }
