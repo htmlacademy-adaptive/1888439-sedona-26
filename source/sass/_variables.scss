@@ -10,3 +10,22 @@ $grey-color-dark: #d5d5d5;
 
 $white: #ffffff;
 $black: #000000;
+
+$tablet-width: 768px;
+$desktop-width: 1200px;
+
+$hover-text-color: $main-color;
+$active-text-color: rgba($black, 0.3);
+$current-text-color: #766357;
+
+$hover-button-color: $main-color-medium;
+$active-button-color: $main-color-dark;
+$disabled-button-color: $grey-color-medium;
+
+$hover-text-field: $grey-color-medium;
+
+$hover-checkbox-color: $grey-color-medium;
+$active-checkbox-color: $grey-color-dark;
+
+$hover-radio-color: $grey-color-medium;
+$active-radio-color: $grey-color-dark;

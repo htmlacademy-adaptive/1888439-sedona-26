@@ -1,3 +1,4 @@
+@use "../variables";
 @use "../mixins";
 
 .subadvantages {
@@ -7,12 +8,55 @@
   list-style-type: none;
 }
 
+.subadvantages__item {
+  box-sizing: border-box;
+  padding-block: 15px;
+}
+
+.subadvantages__item:first-child {
+  padding-block-start: 31px;
+}
+
+.subadvantages__item:last-child {
+  padding-block-end: 52px;
+}
+
 .subadvantages__title {
+  margin: 0;
+
   @include mixins.medium-font;
   text-align: center;
 }
 
 .subadvantages__description {
+  margin: 0;
+
   @include mixins.normal-font;
   text-align: center;
+}
+
+@media (min-width: variables.$tablet-width) {
+  .subadvantages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: span 3;
+    padding: 0;
+  }
+
+  .subadvantages__item {
+    min-height: 330px;
+  }
+
+  .subadvantages__item,
+  .subadvantages__item:first-child,
+  .subadvantages__item:last-child {
+    padding-block: 158px 30px;
+    padding-inline: 30px;
+  }
+
+  .subadvantages__title {
+    margin-bottom: 30px;
+
+    @include mixins.large-font-size;
+  }
 }

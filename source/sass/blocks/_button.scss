@@ -11,4 +11,26 @@
 
   background-color: variables.$main-color;
   border: none;
+
+  &:hover,
+  &:focus-visible {
+    background-color: variables.$hover-button-color;
+    outline: none;
+  }
+
+  &:active {
+    @include mixins.button-active;
+  }
+
+  &:disabled,
+  &--disabled,
+  &:disabled:hover,
+  &--disabled:hover,
+  &:disabled:focus-visible,
+  &--disabled:focus-visible,
+  &:disabled:active,
+  &--disabled:active {
+    color: variables.$white;
+    background-color: variables.$disabled-button-color;
+  }
 }

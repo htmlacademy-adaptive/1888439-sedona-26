@@ -1,5 +1,7 @@
 @use "../variables";
-@use "./blocks/field-group";
+@use "../mixins";
+@use "./row";
+@use "./field-group";
 @use "./textarea-field";
 @use "./radio-field";
 @use "./checkbox-field";
@@ -13,7 +15,6 @@
 }
 
 .review-form__note {
-  padding-inline: 20px;
   text-align: end;
 
   font-family: variables.$main-font-family;
@@ -24,10 +25,54 @@
 }
 
 .review-form__emotions-field {
-  margin-bottom: 56px;
+  margin-bottom: 32px;
+}
+
+.review-form__footer {
+  padding-inline: 20px;
+  margin: 0 auto;
+  max-width: variables.$tablet-width;
 }
 
 .review-form__submit-button {
-  width: calc(100% - 40px);
+  width: 100%;
   margin: 0 auto;
+}
+
+@media (min-width: variables.$tablet-width) {
+  .review-form {
+    border: none;
+    padding-inline: 60px;
+    margin-block-end: 60px;
+  }
+
+  .review-form__footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .review-form__row .review-form__field-group,
+  .review-form__field-group {
+    margin-block: 0;
+  }
+
+  .review-form__row,
+  .review-form__field-group {
+    margin-bottom: 48px;
+  }
+
+  .review-form__note {
+    @include mixins.normal-font-size;
+  }
+}
+
+@media (min-width: variables.$desktop-width) {
+  .review-form {
+    padding-inline: 120px;
+  }
+
+  .review-form__row,
+  .review-form__field-group {
+    margin-bottom: 56px;
+  }
 }

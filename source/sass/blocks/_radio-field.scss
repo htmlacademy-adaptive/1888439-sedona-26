@@ -5,7 +5,7 @@
   position: relative;
   display: block;
   padding-block: 10px;
-  padding-left: 62px;
+  padding-inline: 62px 20px;
 
   @include mixins.medium-font($case: none);
 
@@ -15,11 +15,9 @@
     left: 0;
     top: 50%;
     display: block;
-    width: 46px;
-    height: 46px;
     transform: translateY(-50%);
+    border: 23px solid variables.$grey-color;
     border-radius: 50%;
-    background-color: variables.$grey-color;
   }
 }
 
@@ -28,4 +26,29 @@
   height: 16px;
   background-color: #333333;
   border: 15px solid variables.$grey-color;
+}
+
+.radio-field__input:hover ~ .radio-field__label::before,
+.radio-field__input:focus-visible ~ .radio-field__label::before {
+  border-color: variables.$hover-radio-color;
+}
+
+.radio-field__input:focus-visible {
+  outline: none;
+}
+
+.radio-field__input:active ~ .radio-field__label::before {
+  background-color: #a5a5a5;
+  border-color: variables.$active-radio-color;
+}
+
+.radio-field__input:disabled ~ .radio-field__label,
+.radio-field__input:disabled:hover ~ .radio-field__label,
+.radio-field__input:disabled:active ~ .radio-field__label {
+  opacity: 0.3;
+
+  &::before {
+    background-color: #333333;
+    border-color: variables.$grey-color;
+  }
 }

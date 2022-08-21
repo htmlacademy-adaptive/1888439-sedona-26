@@ -45,7 +45,7 @@
         <form class="review-form" action="https://echo.htmlacademy.ru" method="post">
           <h2 class="visually-hidden">Форма отзыва</h2>
 
-          <div class="row">
+          <div class="review-form__row row">
             <fieldset class="review-form__field-group field-group row__column">
               <legend class="field-group__legend">Представьтесь:</legend>
               <ul class="field-group__list">
@@ -74,22 +74,22 @@
               <legend class="field-group__legend">Контактная информация:</legend>
               <ul class="field-group__list">
                 <li class="field-group__item">
-                  <div class="text-field">
+                  <div class="text-field text-field--telephone">
                     <label class="text-field__label" for="phone">Контактный телефон*:</label>
-                    <input class="text-field__input text-field__input--telephone" type="tel" name="phone" id="phone" placeholder="Введите телефон" required>
+                    <input class="text-field__input" type="tel" name="phone" id="phone" placeholder="Введите телефон" required>
                   </div>
                 </li>
                 <li class="field-group__item">
-                  <div class="text-field">
+                  <div class="text-field text-field--email">
                     <label class="text-field__label" for="email">Электронная почта*:</label>
-                    <input class="text-field__input text-field__input--email" type="email" name="email" id="email" placeholder="Введите e-mail" required>
+                    <input class="text-field__input" type="email" name="email" id="email" placeholder="Введите e-mail" required>
                   </div>
                 </li>
               </ul>
             </fieldset>
           </div>
 
-          <fieldset class="review-form__field-group field-group">
+          <fieldset class="review-form__field-group field-group field-group--radio-group">
             <legend class="field-group__legend">Ваше общее впечатление:</legend>
             <ul class="field-group__list">
               <li class="field-group__item">
@@ -113,7 +113,7 @@
             </ul>
           </fieldset>
 
-          <fieldset class="review-form__field-group field-group">
+          <fieldset class="review-form__field-group field-group field-group--checkbox-group">
             <legend class="field-group__legend">Посещенные достопримечательности:</legend>
             <ul class="field-group__list">
               <li class="field-group__item">
@@ -148,9 +148,10 @@
             <textarea class="textarea-field__input" name="emotions" id="emotions" placeholder="Опишите подробно все свои восторги"></textarea>
           </div>
 
-          <button class="review-form__submit-button button" type="submit">Отправить отзыв</button>
-
-          <p class="review-form__note">* — обязательные поля</p>
+          <div class="review-form__footer">
+            <button class="review-form__submit-button button" type="submit">Отправить отзыв</button>
+            <p class="review-form__note">* — обязательные поля</p>
+          </div>
         </form>
       </main>
 
@@ -193,7 +194,7 @@
       </section>
     </div>
 
-    <div class="modal modal--closed">
+    <div class="modal modal--wide modal--closed">
       <section class="modal__content">
         <div class="modal__text">
           <h2 class="modal__title">Ваш отзыв отправлен!</h2>

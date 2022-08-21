@@ -1,0 +1,27 @@
+@use "../variables";
+@use "../mixins";
+
+@media (min-width: variables.$tablet-width) {
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+
+    &::before {
+      content: "";
+      display: block;
+      min-height: 338px;
+      grid-column: 2;
+      background-color: #dbdbdb;
+    }
+  }
+
+  .row__column:first-child {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .row__column:last-child {
+    grid-row: 1;
+    grid-column: 3;
+  }
+}

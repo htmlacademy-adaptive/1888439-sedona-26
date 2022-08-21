@@ -1,10 +1,22 @@
+@use "../variables";
 @use "../mixins";
 
 .html-academy-logo {
-  @include mixins.normal-font;
   display: block;
+
+  @include mixins.normal-font;
   text-align: center;
   text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+    color: variables.$hover-text-color;
+  }
+
+  &:active {
+    color: variables.$active-text-color;
+  }
 }
 
 .html-academy-logo__image {

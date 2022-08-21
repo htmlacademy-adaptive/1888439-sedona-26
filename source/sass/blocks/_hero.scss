@@ -1,20 +1,45 @@
+@use "../variables";
+
 .hero {
-  padding-top: 52px;
-  padding-bottom: 67px;
+  padding-block: 52px 67px;
+  padding-inline: 45px;
   background-image:
     url("../img/intro-triangle.svg"),
     url("../img/mountains-mobile.jpg");
-  background-position: left 50% bottom 0, center top;
+  background-position: left 50% bottom 0, center bottom;
   background-repeat: no-repeat, no-repeat;
   background-size: auto, cover;
 }
 
 .hero--index {
-  padding-top: 90px;
-  padding-bottom: 85px;
+  padding-block: 90px 85px;
+  padding-inline: 20px;
 }
 
 .hero__content {
   display: block;
+  width: 460px;
+  max-width: 100%;
+  height: auto;
   margin: 0 auto;
+}
+
+@media (min-width: variables.$tablet-width) {
+  .hero {
+    padding-block: 95px 117px;
+  }
+
+  .hero--index {
+    padding-block: 77px 91px;
+  }
+}
+
+@media (min-width: variables.$desktop-width) {
+  .hero {
+    padding-block: 103px 120px;
+  }
+
+  .hero--index {
+    padding-block: 77px 91px;
+  }
 }
