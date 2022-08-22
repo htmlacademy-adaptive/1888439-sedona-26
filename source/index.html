@@ -51,7 +51,11 @@
                 <p class="advantages__description">Cедона не аттракцион для туристов, там течет своя жизнь</p>
               </div>
               <a class="advantages__image-link" href="img/photo-city.jpg" target="_blank">
-                <img class="advantages__image" src="img/photo-city.jpg" alt="Городок" width="320" height="260">
+                <picture>
+                  <source media="(min-width: 1200px)" srcset="img/advantages/photo-city-desktop@1x.jpg 1x, img/advantages/photo-city-desktop@2x.jpg 2x">
+                  <source media="(min-width: 768px)" srcset="img/advantages/photo-city-tablet@1x.jpg 1x, img/advantages/photo-city-tablet@2x.jpg 2x">
+                  <img class="advantages__image" src="img/advantages/photo-city-mobile@1x.jpg" srcset="img/advantages/photo-city-mobile@2x.jpg 2x" alt="Городок" width="320" height="260">
+                </picture>
               </a>
               <ul class="advantages__subadvantages subadvantages">
                 <li class="subadvantages__item subadvantages__item--house">
@@ -74,7 +78,11 @@
                 <p class="advantages__description">Да, по нему можно пройти! Если вы осмелитесь, конечно</p>
               </div>
               <a class="advantages__image-link advantages__image-link--left" href="img/photo-bridge.jpg" target="_blank">
-                <img class="advantages__image" src="img/photo-bridge.jpg" alt="Мост дьявола" width="320" height="260">
+                <picture>
+                  <source media="(min-width: 1200px)" srcset="img/advantages/photo-bridge-desktop@1x.jpg 1x, img/advantages/photo-bridge-desktop@2x.jpg 2x">
+                  <source media="(min-width: 768px)" srcset="img/advantages/photo-bridge-tablet@1x.jpg 1x, img/advantages/photo-bridge-tablet@2x.jpg 2x">
+                  <img class="advantages__image" src="img/advantages/photo-bridge-mobile@1x.jpg" srcset="img/advantages/photo-bridge-mobile@2x.jpg 2x" alt="Мост дьявола" width="320" height="260">
+                </picture>
               </a>
             </li>
             <li class="advantages__item">
@@ -107,7 +115,11 @@
         <section class="location">
           <h2 class="visually-hidden">Мы на карте</h2>
           <div class="location__map map">
-            <img class="map__content" src="img/map-mobile.png" alt="Карта" width="320" height="350">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/map/map-desktop@1x.png 1x, img/map/map-desktop@2x.png 2x">
+              <source media="(min-width: 768px)" srcset="img/map/map-tablet@1x.png 1x, img/map/map-tablet@2x.png 2x">
+              <img class="map__content" src="img/map/map-mobile@1x.png" srcset="img/map/map-mobile@2x.png 2x" alt="Карта" width="320" height="350">
+            </picture>
             <div class="map__marker"><span class="visually-hidden">Маркер</span></div>
           </div>
         </section>
