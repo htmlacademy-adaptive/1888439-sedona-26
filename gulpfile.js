@@ -2,44 +2,96 @@ import gulp from 'gulp';
 import plumber from 'gulp-plumber';
 import sass from 'gulp-dart-sass';
 import postcss from 'gulp-postcss';
+import csso from 'postcss-csso';
 import autoprefixer from 'autoprefixer';
 import browser from 'browser-sync';
+import htmlmin from 'gulp-htmlmin';
+import terser from 'gulp-terser';
+import {deleteAsync} from 'del';
+
+const SOURCE_DIR = 'source';
+const BUILD_DIR = 'build';
 
 // Styles
-
 export const styles = () => {
-  return gulp.src('source/sass/style.scss', { sourcemaps: true })
+  return gulp.src(`${SOURCE_DIR}/sass/style.scss`, { sourcemaps: true })
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([
-      autoprefixer()
+      autoprefixer(),
+      csso(),
     ]))
-    .pipe(gulp.dest('source/css', { sourcemaps: '.' }))
+    .pipe(gulp.dest(`${BUILD_DIR}/css`, { sourcemaps: '.' }))
     .pipe(browser.stream());
+};
+
+// HTML
+export const html = () => {
+  return gulp.src(`${SOURCE_DIR}/*.html`)
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest(BUILD_DIR));
+};
+
+// Scripts
+export const scripts = () => {
+  return gulp.src(`${SOURCE_DIR}/js/**/*.js`, { sourcemaps: true })
+    .pipe(terser())
+    .pipe(gulp.dest(`${BUILD_DIR}/js`, { sourcemaps: '.' }))
+    .pipe(browser.stream());
+};
+
+// Images
+export const images = () => {
+  return gulp.src(`${SOURCE_DIR}/img/**/*.{jpg,jpeg,png}`)
+    .pipe(gulp.dest(`${BUILD_DIR}/img`));
+};
+
+// Svg
+export const svg = () => {
+  return gulp.src(`${SOURCE_DIR}/img/**/*.svg`)
+    .pipe(gulp.dest(`${BUILD_DIR}/img`));
+}
+
+// Fonts
+export const fonts = () => {
+  return gulp.src(`${SOURCE_DIR}/fonts/*.{woff,woff2}`)
+    .pipe(gulp.dest(`${BUILD_DIR}/fonts`));
+}
+
+// Others
+export const others = () => {
+  return gulp.src(`${SOURCE_DIR}/*.ico`)
+    .pipe(gulp.dest(BUILD_DIR));
 }
 
 // Server
-
-const server = (done) => {
+const server = async () => {
   browser.init({
     server: {
-      baseDir: 'source'
+      baseDir: BUILD_DIR,
     },
     cors: true,
     notify: false,
     ui: false,
   });
-  done();
-}
+};
+
+// Clean
+export const clean = () => deleteAsync(BUILD_DIR);
 
 // Watcher
-
 const watcher = () => {
-  gulp.watch('source/sass/**/*.scss', gulp.series(styles));
-  gulp.watch('source/*.html').on('change', browser.reload);
-}
+  gulp.watch(`${SOURCE_DIR}/sass/**/*.scss`, gulp.series(styles));
+  gulp.watch(`${SOURCE_DIR}/js/**/*.js`, gulp.series(scripts));
+  gulp.watch(`${SOURCE_DIR}/*.html`).on('change', browser.reload);
+};
 
-
-export default gulp.series(
-  styles, server, watcher
+// Dev
+const dev = gulp.series(
+  clean,
+  gulp.parallel(styles, html, scripts, images, svg, fonts, others),
+  server,
+  watcher,
 );
+
+export default dev;
