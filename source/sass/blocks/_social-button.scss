@@ -2,13 +2,15 @@
 @use "../mixins";
 
 .social-button {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 48px;
   height: 48px;
   background-color: variables.$main-color;
+  fill: variables.$white;
 
-  &:hover,
-  &:focus-visible {
+  &:is(:hover, :focus-visible) {
     background-color: variables.$hover-button-color;
   }
 
@@ -18,6 +20,10 @@
 
   &:active {
     @include mixins.button-active;
+
+    .social-button__icon {
+      opacity: 0.3;
+    }
   }
 
   &--disabled,

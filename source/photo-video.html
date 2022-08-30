@@ -3,6 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-icon-180x180.png">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <title>Фото и видео</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -15,7 +34,7 @@
         </a>
 
         <nav class="main-header__navigation main-navigation">
-          <ul class="main-navigation__list">
+          <ul class="main-navigation__list main-navigation__list--closed">
             <li class="main-navigation__item">
               <a class="main-navigation__link" href="index.html">Главная</a>
             </li>
@@ -29,9 +48,8 @@
               <a class="main-navigation__link" href="https://htmlacademy.ru" target="_blank">Html academy</a>
             </li>
           </ul>
+          <button class="main-navigation__toggle-button" type="button"><span class="visually-hidden">Открыть меню</span></button>
         </nav>
-
-        <button class="main-header__navigation-toggle-button" type="button"><span class="visually-hidden">Открыть меню</span></button>
       </header>
 
       <main>
@@ -51,17 +69,21 @@
                 <header class="photo__description">
                   <h3 class="photo__title">Неродные просторы</h3>
                   <p class="photo__author">Автор фото: Борис</p>
-                  <div class="photo__like like">
-                    <button class="like__button" type="button">
-                      <span class="visually-hidden">Мне нравится</span>
-                    </button>
-                    <p class="like__counter">
+                  <p class="photo__like like">
+                    <svg class="like__icon" width="22" height="20">
+                      <use xlink:href="./img/sprite.svg#like-icon" />
+                    </svg>
+                    <span class="like__counter">
                       <span class="visually-hidden">Оценили положительно</span> 1350 <span class="visually-hidden">человек</span>
-                    </p>
-                  </div>
+                    </span>
+                  </p>
                 </header>
                 <a class="photo__image-link" href="img/photos/photo-1.jpg" target="_blank">
-                  <img class="photo__image" src="img/photos/photo-1.jpg" alt="Неродные просторы" width="280" height="280">
+                  <picture>
+                    <source media="(min-width: 1200px)" srcset="img/photos/photo-1-desktop@1x.jpg 1x, img/photos/photo-1-desktop@2x.jpg 2x">
+                    <source media="(min-width: 768px)" srcset="img/photos/photo-1-tablet@1x.jpg 1x, img/photos/photo-1-tablet@2x.jpg 2x">
+                    <img class="photo__image" src="img/photos/photo-1-mobile@1x.jpg" srcset="img/photos/photo-1-mobile@2x.jpg 2x" alt="Неродные просторы" width="280" height="280">
+                  </picture>
                 </a>
               </article>
             </li>
@@ -70,17 +92,21 @@
                 <header class="photo__description">
                   <h3 class="photo__title">Местная растительность</h3>
                   <p class="photo__author">Автор фото: Сергей</p>
-                  <div class="photo__like like">
-                    <button class="like__button" type="button">
-                      <span class="visually-hidden">Мне нравится</span>
-                    </button>
-                    <p class="like__counter">
-                      <span class="visually-hidden">Оценили положительно</span> 143 <span class="visually-hidden">человека</span>
-                    </p>
-                  </div>
+                  <p class="photo__like like">
+                    <svg class="like__icon" width="22" height="20">
+                      <use xlink:href="./img/sprite.svg#like-icon" />
+                    </svg>
+                    <span class="like__counter">
+                      <span class="visually-hidden">Оценили положительно</span> 143 <span class="visually-hidden">человек</span>
+                    </span>
+                  </p>
                 </header>
                 <a class="photo__image-link" href="img/photos/photo-2.jpg" target="_blank">
-                  <img class="photo__image" src="img/photos/photo-2.jpg" alt="Местная растительность" width="280" height="280">
+                  <picture>
+                    <source media="(min-width: 1200px)" srcset="img/photos/photo-2-desktop@1x.jpg 1x, img/photos/photo-2-desktop@2x.jpg 2x">
+                    <source media="(min-width: 768px)" srcset="img/photos/photo-2-tablet@1x.jpg 1x, img/photos/photo-2-tablet@2x.jpg 2x">
+                    <img class="photo__image" src="img/photos/photo-2-mobile@1x.jpg" srcset="img/photos/photo-2-mobile@2x.jpg 2x" alt="Местная растительность" width="280" height="280">
+                  </picture>
                 </a>
               </article>
             </li>
@@ -89,17 +115,21 @@
                 <header class="photo__description">
                   <h3 class="photo__title">Дорога на север</h3>
                   <p class="photo__author">Автор фото: Петр</p>
-                  <div class="photo__like like">
-                    <button class="like__button" type="button">
-                      <span class="visually-hidden">Мне нравится</span>
-                    </button>
-                    <p class="like__counter">
+                  <p class="photo__like like">
+                    <svg class="like__icon" width="22" height="20">
+                      <use xlink:href="./img/sprite.svg#like-icon" />
+                    </svg>
+                    <span class="like__counter">
                       <span class="visually-hidden">Оценили положительно</span> 96 <span class="visually-hidden">человек</span>
-                    </p>
-                  </div>
+                    </span>
+                  </p>
                 </header>
                 <a class="photo__image-link" href="img/photos/photo-3.jpg" target="_blank">
-                  <img class="photo__image" src="img/photos/photo-3.jpg" alt="Дорога на север" width="280" height="280">
+                  <picture>
+                    <source media="(min-width: 1200px)" srcset="img/photos/photo-3-desktop@1x.jpg 1x, img/photos/photo-3-desktop@2x.jpg 2x">
+                    <source media="(min-width: 768px)" srcset="img/photos/photo-3-tablet@1x.jpg 1x, img/photos/photo-3-tablet@2x.jpg 2x">
+                    <img class="photo__image" src="img/photos/photo-3-mobile@1x.jpg" srcset="img/photos/photo-3-mobile@2x.jpg 2x" alt="Дорога на север" width="280" height="280">
+                  </picture>
                 </a>
               </article>
             </li>
@@ -108,17 +138,21 @@
                 <header class="photo__description">
                   <h3 class="photo__title">Мост дьявола</h3>
                   <p class="photo__author">Автор фото: Антон</p>
-                  <div class="photo__like like">
-                    <button class="like__button" type="button">
-                      <span class="visually-hidden">Мне нравится</span>
-                    </button>
-                    <p class="like__counter">
-                      <span class="visually-hidden">Оценили положительно</span> 254 <span class="visually-hidden">человека</span>
-                    </p>
-                  </div>
+                  <p class="photo__like like">
+                    <svg class="like__icon" width="22" height="20">
+                      <use xlink:href="./img/sprite.svg#like-icon" />
+                    </svg>
+                    <span class="like__counter">
+                      <span class="visually-hidden">Оценили положительно</span> 254 <span class="visually-hidden">человек</span>
+                    </span>
+                  </p>
                 </header>
                 <a class="photo__image-link" href="img/photos/photo-4.jpg" target="_blank">
-                  <img class="photo__image" src="img/photos/photo-4.jpg" alt="Мост дьявола" width="280" height="280">
+                  <picture>
+                    <source media="(min-width: 1200px)" srcset="img/photos/photo-4-desktop@1x.jpg 1x, img/photos/photo-4-desktop@2x.jpg 2x">
+                    <source media="(min-width: 768px)" srcset="img/photos/photo-4-tablet@1x.jpg 1x, img/photos/photo-4-tablet@2x.jpg 2x">
+                    <img class="photo__image" src="img/photos/photo-4-mobile@1x.jpg" srcset="img/photos/photo-4-mobile@2x.jpg 2x" alt="Мост дьявола" width="280" height="280">
+                  </picture>
                 </a>
               </article>
             </li>
@@ -140,8 +174,12 @@
                 src="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4"
                 type="video/mp4">
             </video> -->
-            <img class="video-player__preview" src="img/video-preview.jpg" alt="Превью видеопрезентации" width="280" height="177">
-            <button class="video-player__play-button" type="button"><span>Проиграть</span></button>
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/video-preview/video-desktop@1x.jpg 1x, img/video-preview/video-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/video-preview/video-tablet@1x.jpg 1x, img/video-preview/video-tablet@2x.jpg 2x">
+              <img class="video-player__preview" src="img/video-preview/video-mobile@1x.jpg" srcset="img/video-preview/video-mobile@2x.jpg 2x" alt="Превью видеопрезентации" width="280" height="177">
+            </picture>
+            <button class="video-player__play-button" type="button"><span class="visually-hidden">Проиграть</span></button>
           </div>
         </section>
       </main>
@@ -153,22 +191,35 @@
           <li class="socials__item">
             <a class="social-button social-button--vk" href="https://vk.com/htmlacademy" target="_blank">
               <span class="visually-hidden">ВКонтакте</span>
+              <svg class="social-button__icon" width="24" height="14" aria-hidden="true">
+                <use xlink:href="img/sprite.svg#vk"></use>
+              </svg>
             </a>
           </li>
           <li class="socials__item">
             <a class="social-button social-button--telegram" href="https://t.me/htmlacademy" target="_blank">
               <span class="visually-hidden" lang="en">Telegram</span>
+              <svg class="social-button__icon" width="22" height="18" aria-hidden="true">
+                <use xlink:href="img/sprite.svg#telegram"></use>
+              </svg>
             </a>
           </li>
           <li class="socials__item">
             <a class="social-button social-button--youtube" href="https://www.youtube.com/user/htmlacademyru" target="_blank">
               <span class="visually-hidden" lang="en">YouTube</span>
+              <svg class="social-button__icon" width="20" height="14" aria-hidden="true">
+                <use xlink:href="img/sprite.svg#youtube"></use>
+              </svg>
             </a>
           </li>
         </ul>
 
         <a class="main-footer__html-academy-logo html-academy-logo" href="https://htmlacademy.ru" target="_blank">
-          Разработано: <img class="html-academy-logo__image" src="img/htmlacademy.svg" alt="Логотип HTML Academy" width="27" height="34">
+          Разработано
+          <svg class="html-academy-logo__image" width="27" height="34">
+            <title>Логотип HTML Academy</title>
+            <use xlink:href="img/sprite.svg#htmlacademy"></use>
+          </svg>
         </a>
       </footer>
     </div>

@@ -4,9 +4,8 @@
 
 .advantages__heading {
   margin: 0 auto;
-  margin-bottom: 32px;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-block-end: 16px;
+  padding-inline: 18px;
   max-width: 520px;
 
   @include mixins.normal-font;
@@ -24,20 +23,27 @@
   border-top: 1px solid #d6d6d6;
 }
 
+.advantages__item:first-child .advantages__text-content {
+  padding-block-start: 70px;
+  background-image: url("data:image/svg+xml,%3Csvg width='768' height='37' viewBox='0 0 768 37' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h384v37L0 0Zm768 0H384v37L768 0Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
 .advantages__text-content {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-block: 40px;
-  padding-inline: 20px;
+  padding-inline: 18px;
   background-color: #eeeeee;
 
   &::before {
     counter-increment: advantage-counter;
     content: "— №" counter(advantage-counter) " —";
     display: block;
-    margin-bottom: 17px;
+    margin-block-end: 17px;
 
     @include mixins.normal-font;
     text-align: center;
@@ -63,7 +69,7 @@
 .advantages__title {
   order: -1;
   margin: 0;
-  margin-bottom: 11px;
+  margin-block-end: 11px;
 
   @include mixins.medium-font;
   text-align: center;
@@ -104,6 +110,11 @@
     grid-column: span 3;
   }
 
+  .advantages__item:first-child .advantages__text-content {
+    background-image: none;
+    padding-block: 40px;
+  }
+
   .advantages__text-content {
     padding-inline: 30px;
     min-height: 256px;
@@ -115,6 +126,7 @@
 
   .advantages__image-link {
     grid-column: span 2;
+    width: 100%;
   }
 
   .advantages__image-link--left {

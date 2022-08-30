@@ -26,7 +26,7 @@
 }
 
 .checkbox-field__input:checked ~ .checkbox-field__label::before {
-  background-image: url("data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.805 1.307 20.76.222c-.285-.296-.856-.296-1.141 0L8.298 11.957 2.403 5.843c-.286-.296-.856-.296-1.142 0L.214 6.928c-.285.295-.285.887 0 1.183l7.419 7.692c.19.197.38.197.57.197.191 0 .381-.099.571-.197L21.615 2.49c.476-.296.476-.789.19-1.183Z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='rgba(51,51,51,1)' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.805 1.307 20.76.222c-.285-.296-.856-.296-1.141 0L8.298 11.957 2.403 5.843c-.286-.296-.856-.296-1.142 0L.214 6.928c-.285.295-.285.887 0 1.183l7.419 7.692c.19.197.38.197.57.197.191 0 .381-.099.571-.197L21.615 2.49c.476-.296.476-.789.19-1.183Z'/%3E%3C/svg%3E");
 }
 
 .checkbox-field__input:hover ~ .checkbox-field__label::before,
@@ -40,6 +40,7 @@
 
 .checkbox-field__input:active ~ .checkbox-field__label::before {
   background-color: variables.$active-checkbox-color;
+  background-image: url("data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='rgba(51,51,51,0.3)' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.805 1.307 20.76.222c-.285-.296-.856-.296-1.141 0L8.298 11.957 2.403 5.843c-.286-.296-.856-.296-1.142 0L.214 6.928c-.285.295-.285.887 0 1.183l7.419 7.692c.19.197.38.197.57.197.191 0 .381-.099.571-.197L21.615 2.49c.476-.296.476-.789.19-1.183Z'/%3E%3C/svg%3E");
 }
 
 .checkbox-field__input:disabled ~ .checkbox-field__label,

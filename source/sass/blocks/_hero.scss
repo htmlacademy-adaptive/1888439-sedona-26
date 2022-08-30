@@ -4,11 +4,17 @@
   padding-block: 52px 67px;
   padding-inline: 45px;
   background-image:
-    url("../img/intro-triangle.svg"),
-    url("../img/mountains-mobile.jpg");
+    var(--hero-triangle),
+    url("../img/mountains-back-mobile@1x.jpg");
   background-position: left 50% bottom 0, center bottom;
   background-repeat: no-repeat, no-repeat;
   background-size: auto, cover;
+
+  @media (min-resolution: 2dppx) {
+    background-image:
+      var(--hero-triangle),
+      url("../img/mountains-back-mobile@2x.jpg");
+  }
 }
 
 .hero--index {
@@ -27,6 +33,15 @@
 @media (min-width: variables.$tablet-width) {
   .hero {
     padding-block: 95px 117px;
+    background-image:
+      var(--hero-triangle),
+      url("../img/mountains-back-desktop@1x.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image:
+        var(--hero-triangle),
+        url("../img/mountains-back-desktop@2x.jpg");
+    }
   }
 
   .hero--index {
