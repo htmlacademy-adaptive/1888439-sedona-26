@@ -7,10 +7,16 @@ import autoprefixer from 'autoprefixer';
 import browser from 'browser-sync';
 import htmlmin from 'gulp-htmlmin';
 import terser from 'gulp-terser';
+import squoosh from 'gulp-libsquoosh';
 import {deleteAsync} from 'del';
+import rename from 'gulp-rename';
+import svgstore from 'gulp-svgstore';
+import svgo from 'gulp-svgmin';
+
 
 const SOURCE_DIR = 'source';
 const BUILD_DIR = 'build';
+
 
 // Styles
 export const styles = () => (
@@ -26,7 +32,7 @@ export const styles = () => (
 );
 
 // HTML
-export const html = () => (
+const html = () => (
   gulp.src(`${SOURCE_DIR}/*.html`)
     .pipe(htmlmin({
       collapseWhitespace: true,
@@ -36,41 +42,78 @@ export const html = () => (
 );
 
 // Copy HTML
-export const copyHtml = () => (
+const copyHtml = () => (
   gulp.src(`${SOURCE_DIR}/*.html`)
     .pipe(gulp.dest(BUILD_DIR))
 );
 
 // Scripts
-export const scripts = () => (
+const scripts = () => (
   gulp.src(`${SOURCE_DIR}/js/**/*.js`, { sourcemaps: true })
     .pipe(terser())
     .pipe(gulp.dest(`${BUILD_DIR}/js`, { sourcemaps: '.' }))
     .pipe(browser.stream())
 );
 
-// Images
-export const images = () => (
+// Copy images
+const copyImages = () => (
   gulp.src(`${SOURCE_DIR}/img/**/*.{jpg,jpeg,png}`)
     .pipe(gulp.dest(`${BUILD_DIR}/img`))
 );
 
+// Optimize images
+const optimizeImages = () => (
+  gulp.src(`${SOURCE_DIR}/img/**/*.{jpg,jpeg,png}`)
+    .pipe(squoosh())
+    .pipe(gulp.dest(`${BUILD_DIR}/img`))
+);
+
+
+// Create webp
+const webp = () => (
+  gulp.src(`${SOURCE_DIR}/img/**/*.{jpg,jpeg,png}`)
+    .pipe(squoosh({ webp: {} }))
+    .pipe(gulp.dest(`${BUILD_DIR}/img`))
+);
+
 // Svg
-export const svg = () => (
+const svg = () => (
   gulp.src(`${SOURCE_DIR}/img/**/*.svg`)
+    .pipe(svgo())
+    .pipe(gulp.dest(`${BUILD_DIR}/img`))
+);
+
+const svgSprite = () => (
+  gulp.src(`${SOURCE_DIR}/img/**/*.svg`)
+    .pipe(svgo({
+      plugins: [
+        {
+          name: 'removeViewBox',
+          active: false,
+        },
+      ],
+    }))
+    .pipe(svgstore({
+      inlineSvg: true,
+    }))
+    .pipe(svgstore())
+    .pipe(rename('sprite.svg'))
     .pipe(gulp.dest(`${BUILD_DIR}/img`))
 );
 
 // Fonts
-export const fonts = () => (
+const fonts = () => (
   gulp.src(`${SOURCE_DIR}/fonts/*.{woff,woff2}`)
     .pipe(gulp.dest(`${BUILD_DIR}/fonts`))
 );
 
 // Others
-export const others = () => (
-  gulp.src(`${SOURCE_DIR}/*.ico`)
-    .pipe(gulp.dest(BUILD_DIR))
+const others = () => (
+  gulp.src([
+    `${SOURCE_DIR}/*.ico`,
+    `${SOURCE_DIR}/manifest.json`,
+    `${SOURCE_DIR}/browserconfig.xml`,
+  ]).pipe(gulp.dest(BUILD_DIR))
 );
 
 // Server
@@ -86,7 +129,7 @@ const server = async () => {
 };
 
 // Clean
-export const clean = () => deleteAsync(BUILD_DIR);
+const clean = () => deleteAsync(BUILD_DIR);
 
 // Watchers
 const watcher = async () => {
@@ -95,12 +138,38 @@ const watcher = async () => {
   gulp.watch(`${SOURCE_DIR}/*.html`).on('change', gulp.series(copyHtml, browser.reload));
 };
 
-// Dev
+// Development
 const dev = gulp.series(
   clean,
-  gulp.parallel(styles, copyHtml, scripts, images, svg, fonts, others),
+  gulp.parallel(
+    styles,
+    copyHtml,
+    scripts,
+    copyImages,
+    webp,
+    svg,
+    svgSprite,
+    fonts,
+    others
+  ),
   server,
   watcher,
+);
+
+// Production
+export const prod = gulp.series(
+  clean,
+  gulp.parallel(
+    styles,
+    html,
+    scripts,
+    optimizeImages,
+    webp,
+    svg,
+    svgSprite,
+    fonts,
+    others
+  ),
 );
 
 export default dev;

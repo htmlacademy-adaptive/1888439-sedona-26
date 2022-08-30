@@ -3,6 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-icon-180x180.png">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <title>Седона</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -15,7 +34,7 @@
         </a>
 
         <nav class="main-header__navigation main-navigation">
-          <ul class="main-navigation__list">
+          <ul class="main-navigation__list main-navigation__list--closed">
             <li class="main-navigation__item">
               <a class="main-navigation__link main-navigation__link--current">Главная</a>
             </li>
@@ -29,9 +48,8 @@
               <a class="main-navigation__link" href="https://htmlacademy.ru" target="_blank">Html academy</a>
             </li>
           </ul>
+          <button class="main-navigation__toggle-button" type="button"><span class="visually-hidden">Открыть меню</span></button>
         </nav>
-
-        <button class="main-header__navigation-toggle-button" type="button"><span class="visually-hidden">Открыть меню</span></button>
       </header>
 
       <main>
@@ -132,22 +150,35 @@
           <li class="socials__item">
             <a class="social-button social-button--vk" href="https://vk.com/htmlacademy" target="_blank">
               <span class="visually-hidden">ВКонтакте</span>
+              <svg class="social-button__icon" width="24" height="14" aria-hidden="true">
+                <use xlink:href="img/sprite.svg#vk"></use>
+              </svg>
             </a>
           </li>
           <li class="socials__item">
             <a class="social-button social-button--telegram" href="https://t.me/htmlacademy" target="_blank">
               <span class="visually-hidden" lang="en">Telegram</span>
+              <svg class="social-button__icon" width="22" height="18" aria-hidden="true">
+                <use xlink:href="img/sprite.svg#telegram"></use>
+              </svg>
             </a>
           </li>
           <li class="socials__item">
             <a class="social-button social-button--youtube" href="https://www.youtube.com/user/htmlacademyru" target="_blank">
               <span class="visually-hidden" lang="en">YouTube</span>
+              <svg class="social-button__icon" width="20" height="14" aria-hidden="true">
+                <use xlink:href="img/sprite.svg#youtube" />
+              </svg>
             </a>
           </li>
         </ul>
 
         <a class="main-footer__html-academy-logo html-academy-logo" href="https://htmlacademy.ru" target="_blank">
-          Разработано <img class="html-academy-logo__image" src="img/htmlacademy.svg" alt="Логотип HTML Academy" width="27" height="34">
+          Разработано
+          <svg class="html-academy-logo__image" width="27" height="34">
+            <title>Логотип HTML Academy</title>
+            <use xlink:href="img/sprite.svg#htmlacademy"></use>
+          </svg>
         </a>
       </footer>
     </div>

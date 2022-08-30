@@ -1,19 +1,19 @@
 @use "../variables";
 @use "../mixins";
 
-.like__button {
-  display: inline-block;
-  width: 23px;
-  height: 21px;
-  vertical-align: bottom;
+.like {
+  margin: 0;
+
+  @include mixins.normal-font($color: variables.$black, $weight: 700);
+}
+
+.like__icon {
+  opacity: 0.3;
 }
 
 .like__counter {
   display: inline-block;
-  margin: 0;
-
-  @include mixins.normal-font($color: variables.$black, $weight: 700);
-  vertical-align: bottom;
+  vertical-align: top;
 }
 
 @media (min-width: variables.$desktop-width) {
@@ -21,7 +21,7 @@
     color: variables.$white;
   }
 
-  .like__counter {
-    color: variables.$white;
+  .like__icon {
+    opacity: 1;
   }
 }
