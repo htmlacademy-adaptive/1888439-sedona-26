@@ -1,0 +1,2 @@
+"use strict";const toggleMenu=({currentTarget:t})=>{t.closest(".main-navigation").querySelector(".main-navigation__list").classList.toggle("main-navigation__list--closed")},contentLoadedHandler=()=>{document.querySelector(".main-navigation__list").classList.add("main-navigation__list--closed");document.querySelector(".main-navigation__toggle-button").addEventListener("click",toggleMenu)};document.addEventListener("DOMContentLoaded",contentLoadedHandler);
+//# sourceMappingURL=script.js.map
