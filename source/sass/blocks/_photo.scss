@@ -44,6 +44,10 @@
     padding: 0;
   }
 
+  .photo__image {
+    height: 267px;
+  }
+
   .photo__description {
     display: grid;
     grid-template-columns: 1fr max-content;
@@ -63,6 +67,10 @@
     grid-row: 1 / -1;
     justify-self: end;
     align-self: center;
+  }
+
+  .gallery__item:first-child .photo__image {
+    height: 400px;
   }
 }
 

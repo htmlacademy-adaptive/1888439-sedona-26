@@ -17,6 +17,10 @@
 }
 
 @media (min-width: variables.$tablet-width) {
+  .gallery {
+    padding-inline: 60px;
+  }
+
   .gallery__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -36,6 +40,10 @@
 }
 
 @media (min-width: variables.$desktop-width) {
+  .gallery {
+    padding-inline: 0;
+  }
+
   .gallery__list {
     grid-template-columns: repeat(3, 1fr);
   }
