@@ -6,6 +6,7 @@
   background-position: left 50% bottom 0, center bottom;
   background-repeat: no-repeat, no-repeat;
   background-size: auto, cover;
+
   @supports (background-image: image-set(url("") type(""))) {
     background-image:
       var(--hero-triangle),
@@ -49,6 +50,7 @@
 @media (min-width: variables.$tablet-width) {
   .hero {
     padding-block: 95px 117px;
+
     @supports (background-image: image-set(url("") type(""))) {
       background-image:
         var(--hero-triangle),
