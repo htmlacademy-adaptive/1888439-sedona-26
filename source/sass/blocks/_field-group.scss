@@ -56,10 +56,6 @@
     padding-block-end: 0;
   }
 
-  .field-group__legend {
-    margin-block-end: 28px;
-  }
-
   :is(.field-group--checkbox-group, .field-group--radio-group) .field-group__list {
     display: grid;
     justify-content: center;
@@ -86,6 +82,7 @@
   .field-group__legend {
     width: 400px;
     padding: 0;
+    margin-block-end: 28px;
 
     @include mixins.large-font-size;
   }
