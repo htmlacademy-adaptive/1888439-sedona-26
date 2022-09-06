@@ -116,4 +116,8 @@
     padding-block: 31px;
     grid-template-columns: repeat(auto-fill, 207px);
   }
+
+  .review-form__field-group:is(:first-child, :nth-child(2)).field-group {
+    padding-block-end: 0;
+  }
 }
