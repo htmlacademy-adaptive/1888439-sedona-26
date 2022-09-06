@@ -15,9 +15,9 @@
   text-align: center;
 }
 
-.textarea-field__label:hover ~ .textarea-field__input {
-  background-color: variables.$grey-color;
-}
+// .textarea-field__label:hover ~ .textarea-field__input {
+//   background-color: variables.$grey-color;
+// }
 
 .textarea-field__input {
   box-sizing: border-box;
@@ -54,16 +54,21 @@
 
 @media (min-width: variables.$tablet-width) {
   .textarea-field {
+    padding-block-start: 0;
     padding-inline: 0;
     border-top: none;
   }
 
   .textarea-field__label {
-    position: relative;
-    padding-inline: calc(50% - 180px) calc(50% - 180px);
+    max-width: 400px;
+    margin-inline: auto;
     margin-block-end: 28px;
 
     @include mixins.large-font-size;
+  }
+
+  .textarea-field__label-decoration {
+    position: relative;
 
     &::before,
     &::after {

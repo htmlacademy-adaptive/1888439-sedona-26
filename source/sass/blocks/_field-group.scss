@@ -5,12 +5,13 @@
 .field-group {
   margin: 0;
   padding: 0;
-  border: 0;
+  padding-block-end: 24px;
+  border: none;
 }
 
 .field-group__legend {
   margin: 0;
-  margin-bottom: 20px;
+  margin-block-end: 20px;
   padding: 0;
   padding-inline: 20px;
 
@@ -26,11 +27,23 @@
 }
 
 .field-group__item {
-  margin-bottom: 16px;
+  margin-block-end: 16px;
 
   &:last-child {
     margin: 0;
   }
+}
+
+.review-form__field-group.field-group {
+  border-bottom: 1px solid variables.$grey-color-medium;
+}
+
+.review-form__field-group:first-child.field-group {
+  padding-block-end: 39px;
+}
+
+.review-form__field-group:nth-child(2).field-group {
+  padding-block-end: 34px;
 }
 
 @media (min-width: variables.$tablet-width) {
@@ -38,12 +51,24 @@
     border-top: 1px solid #bdbdbd;
   }
 
+  .review-form__field-group.field-group {
+    border-bottom: none;
+    padding-block-end: 0;
+  }
+
   :is(.field-group--checkbox-group, .field-group--radio-group) .field-group__list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 280px);
     justify-content: center;
+  }
+
+  .field-group--radio-group .field-group__list {
+    grid-template-columns: repeat(2, 280px);
     gap: 16px;
-    padding-block: 17px;
+  }
+
+  .field-group--checkbox-group .field-group__list {
+    grid-template-columns: repeat(2, 224px);
+    gap: 16px 32px;
   }
 
   :is(.field-group--checkbox-group, .field-group--radio-group) .field-group__item {
@@ -57,6 +82,7 @@
   .field-group__legend {
     width: 400px;
     padding: 0;
+    margin-block-end: 28px;
 
     @include mixins.large-font-size;
   }
@@ -87,7 +113,19 @@
     padding-inline-start: 64px;
   }
 
+  .field-group--radio-group .field-group__list {
+    grid-template-columns: repeat(3, 280px);
+    gap: 28px;
+    padding-block: 17px;
+  }
+
   .field-group--checkbox-group .field-group__list {
-    grid-template-columns: repeat(auto-fill, 207px);
+    padding-block: 31px;
+    grid-template-columns: repeat(4, max-content);
+    gap: 44px;
+  }
+
+  .review-form__field-group:is(:first-child, :nth-child(2)).field-group {
+    padding-block-end: 0;
   }
 }

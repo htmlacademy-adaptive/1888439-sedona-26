@@ -96,7 +96,6 @@ const svgSprite = () => (
     .pipe(svgstore({
       inlineSvg: true,
     }))
-    .pipe(svgstore())
     .pipe(rename('sprite.svg'))
     .pipe(gulp.dest(`${BUILD_DIR}/img`))
 );

@@ -13,7 +13,7 @@
   width: 100%;
   padding: 16px;
 
-  @include mixins.medium-font;
+  @include mixins.medium-font($case: none);
 
   background-color: variables.$grey-color;
   border: none;
