@@ -38,6 +38,7 @@ const createStyles = () => (
     .pipe(postcss([
       autoprefixer(),
     ]))
+    .pipe(rename('styles.min.css'))
     .pipe(gulp.dest(`${BUILD_DIR}/css`, { sourcemaps: '.' }))
     .pipe(browser.stream())
 );
@@ -67,6 +68,7 @@ const optimizeScripts = () => (
 
 const copyScripts = () => (
   gulp.src(`${SOURCE_DIR}/js/**/*.js`, { sourcemaps: true })
+    .pipe(rename('script.min.js'))
     .pipe(gulp.dest(`${BUILD_DIR}/js`, { sourcemaps: '.' }))
     .pipe(browser.stream())
 );
