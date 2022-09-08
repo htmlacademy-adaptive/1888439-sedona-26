@@ -19,7 +19,7 @@ const BUILD_DIR = 'build';
 
 
 // Styles
-export const styles = () => (
+const optimizeStyles = () => (
   gulp.src(`${SOURCE_DIR}/sass/style.scss`, { sourcemaps: true })
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
@@ -27,12 +27,23 @@ export const styles = () => (
       autoprefixer(),
       csso(),
     ]))
+    .pipe(rename('styles.min.css'))
+    .pipe(gulp.dest(`${BUILD_DIR}/css`, { sourcemaps: '.' }))
+);
+
+const createStyles = () => (
+  gulp.src(`${SOURCE_DIR}/sass/style.scss`, { sourcemaps: true })
+    .pipe(plumber())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss([
+      autoprefixer(),
+    ]))
     .pipe(gulp.dest(`${BUILD_DIR}/css`, { sourcemaps: '.' }))
     .pipe(browser.stream())
 );
 
 // HTML
-const html = () => (
+const optimizeHtml = () => (
   gulp.src(`${SOURCE_DIR}/*.html`)
     .pipe(htmlmin({
       collapseWhitespace: true,
@@ -41,35 +52,37 @@ const html = () => (
     .pipe(gulp.dest(BUILD_DIR))
 );
 
-// Copy HTML
 const copyHtml = () => (
   gulp.src(`${SOURCE_DIR}/*.html`)
     .pipe(gulp.dest(BUILD_DIR))
 );
 
 // Scripts
-const scripts = () => (
+const optimizeScripts = () => (
   gulp.src(`${SOURCE_DIR}/js/**/*.js`, { sourcemaps: true })
     .pipe(terser())
+    .pipe(rename('script.min.js'))
+    .pipe(gulp.dest(`${BUILD_DIR}/js`, { sourcemaps: '.' }))
+);
+
+const copyScripts = () => (
+  gulp.src(`${SOURCE_DIR}/js/**/*.js`, { sourcemaps: true })
     .pipe(gulp.dest(`${BUILD_DIR}/js`, { sourcemaps: '.' }))
     .pipe(browser.stream())
 );
 
-// Copy images
+// Images
 const copyImages = () => (
   gulp.src(`${SOURCE_DIR}/img/**/*.{jpg,jpeg,png}`)
     .pipe(gulp.dest(`${BUILD_DIR}/img`))
 );
 
-// Optimize images
 const optimizeImages = () => (
   gulp.src(`${SOURCE_DIR}/img/**/*.{jpg,jpeg,png}`)
     .pipe(squoosh())
     .pipe(gulp.dest(`${BUILD_DIR}/img`))
 );
 
-
-// Create webp
 const webp = () => (
   gulp.src(`${SOURCE_DIR}/img/**/*.{jpg,jpeg,png}`)
     .pipe(squoosh({ webp: {} }))
@@ -77,7 +90,7 @@ const webp = () => (
 );
 
 // Svg
-const svg = () => (
+const optimizeSvg = () => (
   gulp.src(`${SOURCE_DIR}/img/**/*.svg`)
     .pipe(svgo())
     .pipe(gulp.dest(`${BUILD_DIR}/img`))
@@ -101,7 +114,7 @@ const svgSprite = () => (
 );
 
 // Fonts
-const fonts = () => (
+const copyFonts = () => (
   gulp.src(`${SOURCE_DIR}/fonts/*.{woff,woff2}`)
     .pipe(gulp.dest(`${BUILD_DIR}/fonts`))
 );
@@ -132,8 +145,8 @@ const clean = () => deleteAsync(BUILD_DIR);
 
 // Watchers
 const watcher = async () => {
-  gulp.watch(`${SOURCE_DIR}/sass/**/*.scss`, gulp.series(styles));
-  gulp.watch(`${SOURCE_DIR}/js/**/*.js`, gulp.series(scripts));
+  gulp.watch(`${SOURCE_DIR}/sass/**/*.scss`, gulp.series(createStyles));
+  gulp.watch(`${SOURCE_DIR}/js/**/*.js`, gulp.series(copyScripts));
   gulp.watch(`${SOURCE_DIR}/*.html`).on('change', gulp.series(copyHtml, browser.reload));
 };
 
@@ -141,14 +154,14 @@ const watcher = async () => {
 const dev = gulp.series(
   clean,
   gulp.parallel(
-    styles,
+    createStyles,
     copyHtml,
-    scripts,
+    copyScripts,
     copyImages,
     webp,
-    svg,
+    optimizeSvg,
     svgSprite,
-    fonts,
+    copyFonts,
     others
   ),
   server,
@@ -159,14 +172,14 @@ const dev = gulp.series(
 export const prod = gulp.series(
   clean,
   gulp.parallel(
-    styles,
-    html,
-    scripts,
+    optimizeStyles,
+    optimizeHtml,
+    optimizeScripts,
     optimizeImages,
     webp,
-    svg,
+    optimizeSvg,
     svgSprite,
-    fonts,
+    copyFonts,
     others
   ),
 );

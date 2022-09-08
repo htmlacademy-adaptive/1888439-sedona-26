@@ -3,14 +3,14 @@
 @use "./button";
 
 .booking {
-  padding-top: 38px;
-  padding-bottom: 49px;
-  padding-inline: 20px;
+  padding-block: 38px 49px;
+  padding-inline: 18px;
 }
 
 .booking__title {
-  margin: 0 auto;
-  margin-bottom: 32px;
+  margin: 0;
+  margin-inline: auto;
+  margin-block-end: 20px;
   max-width: 458px;
 
   @include mixins.large-font;
