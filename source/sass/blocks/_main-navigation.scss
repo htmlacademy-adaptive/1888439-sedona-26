@@ -33,7 +33,8 @@
 .main-navigation__link {
   @include mixins.medium-font(variables.$white);
   display: block;
-  padding: 12px;
+  padding-block: 17px 12px;
+  padding-inline: 50px;
   text-decoration: none;
   cursor: pointer;
 
@@ -104,8 +105,8 @@
   }
 
   .main-navigation__link {
-    padding-top: 18px;
-    padding-bottom: 17px;
+    padding-block: 18px 17px;
+    padding-inline: 15px;
     color: variables.$black;
     font-size: 14px;
     line-height: 21px;
