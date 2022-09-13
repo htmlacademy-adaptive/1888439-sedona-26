@@ -1,9 +1,17 @@
+@use "../variables";
 @use "./social-button";
 
 .socials {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 6px;
   padding: 0;
   list-style-type: none;
+}
+
+@media (min-width: variables.$tablet-width) {
+  .main-footer .socials {
+    padding-inline: calc(25% + 25px) calc(25% + 25px);
+  }
 }

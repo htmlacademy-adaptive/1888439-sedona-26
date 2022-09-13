@@ -22,8 +22,8 @@
 
 @media (min-width: variables.$tablet-width) {
   .main-footer {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
     padding-block: 36px;
     padding-inline: 60px;
@@ -31,10 +31,22 @@
 
   .main-footer__hashtag {
     margin: 0;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    z-index: 1;
   }
 
   .main-footer__socials-list {
     margin: 0;
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .main-footer__html-academy-logo {
+    grid-column: 4;
+    grid-row: 1;
+    justify-self: end;
   }
 }
 
