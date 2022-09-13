@@ -43,8 +43,7 @@
 
 .hero__content {
   display: block;
-  width: 460px;
-  max-width: 100%;
+  width: 282px;
   height: auto;
   margin: 0 auto;
 }
@@ -84,6 +83,10 @@
 
   .hero--index {
     padding-block: 77px 91px;
+  }
+
+  .hero__content {
+    width: 461px;
   }
 }
 
