@@ -1,0 +1,33 @@
+@use "../variables";
+
+.breaker,
+.breaker--tablet,
+.breaker--desktop {
+  display: none;
+}
+
+.breaker--mobile {
+  display: inline;
+}
+
+@media (min-width: variables.$tablet-width) {
+  .breaker--mobile,
+  .breaker--desktop {
+    display: none;
+  }
+
+  .breaker--tablet {
+    display: inline;
+  }
+}
+
+@media (min-width: variables.$desktop-width) {
+  .breaker--mobile,
+  .breaker--tablet {
+    display: none;
+  }
+
+  .breaker--desktop {
+    display: inline;
+  }
+}
