@@ -60,6 +60,7 @@
   }
 
   .textarea-field__label {
+    width: max-content;
     max-width: 400px;
     margin-inline: auto;
     margin-block-end: 28px;
@@ -89,5 +90,9 @@
       left: calc(50% + 200px);
       right: 0;
     }
+  }
+
+  .textarea-field__input {
+    height: 160px;
   }
 }

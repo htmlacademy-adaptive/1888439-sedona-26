@@ -2,26 +2,45 @@
 @use "../mixins";
 
 .page__hero {
-  margin-bottom: 32px;
+  margin-block-end: 32px;
+}
+
+.page--photo-video .page__hero {
+  margin-block-end: 38px;
 }
 
 .page__title {
   margin: 0 auto;
-  margin-bottom: 35px;
+  margin-block-end: 25px;
   max-width: 500px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-inline: 20px;
 
   @include mixins.medium-font;
   text-align: center;
 }
 
+.page--review-form .page__hero {
+  margin-block-end: 37px;
+}
+
+.page--review-form .page__title {
+  margin-block-end: 23px;
+}
+
+.page--review-form .page__description {
+  margin-block-end: 27px;
+}
+
+.page__title--index {
+  padding-inline: 30px;
+  margin-block-end: 36px;
+}
+
 .page__description {
-  padding-left: 20px;
-  padding-right: 20px;
-  max-width: 500px;
+  padding-inline: 20px;
+  max-width: 445px;
   margin: 0 auto;
-  margin-bottom: 28px;
+  margin-block-end: 36px;
 
   @include mixins.normal-font;
   text-align: center;
@@ -29,28 +48,62 @@
 
 @media (min-width: variables.$tablet-width) {
   .page__hero {
-    margin-bottom: 47px;
+    margin-block-end: 47px;
+  }
+
+  .page--review-form .page__hero {
+    margin-block-end: 57px;
   }
 
   .page__title {
+    margin-block-end: 25px;
+
     @include mixins.extra-large-font-size;
+  }
+
+  .page--review-form .page__title {
+    margin-block-end: 16px;
   }
 
   .page__title--index {
     @include mixins.large-font-size;
   }
 
+  .page--photo-video .page__hero {
+    margin-block-end: 59px;
+  }
+
   .page__description {
-    margin-bottom: 102px;
+    margin-block-end: 81px;
+  }
+
+  .page--review-form .page__description {
+    margin-block-end: 106px;
   }
 }
 
 @media (min-width: variables.$desktop-width) {
   .page__hero {
-    margin-bottom: 59px;
+    margin-block-end: 59px;
+  }
+
+  .page--review-form .page__hero {
+    margin-block-end: 106px;
+  }
+
+  .page--photo-video .page__hero {
+    margin-block-end: 90px;
+  }
+
+  .page--review-form .page__title {
+    margin-block-end: 25px;
   }
 
   .page__description {
-    margin-bottom: 67px;
+    margin-block-end: 90px;
+  }
+
+  .page--review-form .page__description {
+    margin-block-end: 69px;
   }
 }

@@ -51,7 +51,9 @@
     border-top: 1px solid #bdbdbd;
   }
 
-  .review-form__field-group.field-group {
+  .review-form__field-group.field-group,
+  .review-form__field-group:first-child.field-group,
+  .review-form__field-group:nth-child(2).field-group {
     border-bottom: none;
     padding-block-end: 0;
   }
@@ -117,10 +119,12 @@
     grid-template-columns: repeat(3, 280px);
     gap: 28px;
     padding-block: 17px;
+    padding-inline-start: 42px;
   }
 
   .field-group--checkbox-group .field-group__list {
     padding-block: 31px;
+    padding-inline-start: 19px;
     grid-template-columns: repeat(4, max-content);
     gap: 44px;
   }

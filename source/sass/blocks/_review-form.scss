@@ -7,15 +7,17 @@
 @use "./checkbox-field";
 
 .review-form {
+  margin-block-end: 27px;
   border-top: 1px solid variables.$grey-color-medium;
 }
 
 .review-form__field-group {
-  margin-top: 24px;
+  margin-block-start: 24px;
 }
 
 .review-form__note {
   text-align: end;
+  margin: 0;
 
   font-family: variables.$main-font-family;
   font-size: 12px;
@@ -25,7 +27,7 @@
 }
 
 .review-form__emotions-field {
-  margin-bottom: 32px;
+  margin-block-end: 32px;
 }
 
 .review-form__footer {
@@ -43,12 +45,14 @@
   .review-form {
     border: none;
     padding-inline: 60px;
-    margin-block-end: 60px;
+    margin-block-end: 64px;
   }
 
   .review-form__footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 0;
   }
 
   .review-form__row .review-form__field-group,
@@ -62,7 +66,13 @@
   }
 
   .review-form__note {
+    margin-block-start: 8px;
+
     @include mixins.normal-font-size;
+  }
+
+  .review-form__emotions-field {
+    margin-block: -5px 23px;
   }
 }
 
@@ -73,6 +83,10 @@
 
   .review-form__row,
   .review-form__field-group {
-    margin-bottom: 56px;
+    margin-block-end: 56px;
+  }
+
+  .review-form__emotions-field {
+    margin-block: 0 24px;
   }
 }

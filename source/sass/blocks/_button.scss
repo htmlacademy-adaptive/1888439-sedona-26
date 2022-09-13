@@ -34,3 +34,13 @@
     background-color: variables.$disabled-button-color;
   }
 }
+
+.modal .button {
+  font-size: 18px;
+}
+
+@media (min-width: variables.$desktop-width) {
+  .modal .button {
+    font-size: 26px;
+  }
+}

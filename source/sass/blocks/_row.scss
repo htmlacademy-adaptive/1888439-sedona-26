@@ -25,3 +25,9 @@
     grid-column: 3;
   }
 }
+
+@media (min-width: variables.$desktop-width) {
+  .row {
+    grid-template-columns: 493px 1px 1fr;
+  }
+}
