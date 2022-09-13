@@ -3,9 +3,10 @@
 .hero {
   padding-block: 52px 67px;
   padding-inline: 45px;
+  background-color: #778591;
   background-position: left 50% bottom 0, center bottom;
   background-repeat: no-repeat, no-repeat;
-  background-size: auto, cover;
+  background-size: auto, 901px 389px;
 
   @supports (background-image: image-set(url("") type(""))) {
     background-image:
@@ -76,6 +77,8 @@
       background-image:
         var(--hero-triangle),
         url("../img/mountains/mountains-back-desktop@2x.jpg");
+
+      background-size: auto, 1200px 518px;
     }
   }
 

@@ -47,3 +47,13 @@
     margin-block-end: 42px;
   }
 }
+
+@media (min-width: variables.$desktop-width) {
+  .booking {
+    padding-block-end: 65px;
+  }
+
+  .booking__description {
+    margin-block-end: 46px;
+  }
+}

@@ -35,12 +35,19 @@
   }
 }
 
-.modal .button {
+.modal__button.button {
   font-size: 18px;
 }
 
+@media (min-width: variables.$tablet-width) {
+  .review-form__submit-button.button {
+    padding-block: 20px 12px;
+    padding-inline-end: 32px;
+  }
+}
+
 @media (min-width: variables.$desktop-width) {
-  .modal .button {
+  .modal__button.button {
     font-size: 26px;
   }
 }
