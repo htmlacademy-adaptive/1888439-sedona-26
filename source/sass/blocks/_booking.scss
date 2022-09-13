@@ -39,6 +39,7 @@
 
   .booking__title {
     margin-block-end: 27px;
+
     @include mixins.extra-large-font-size;
   }
 
