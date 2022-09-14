@@ -125,7 +125,7 @@ const copyFonts = () => (
 const others = () => (
   gulp.src([
     `${SOURCE_DIR}/*.ico`,
-    `${SOURCE_DIR}/manifest.json`,
+    `${SOURCE_DIR}/manifest.webmanifest`,
     `${SOURCE_DIR}/browserconfig.xml`,
   ]).pipe(gulp.dest(BUILD_DIR))
 );
