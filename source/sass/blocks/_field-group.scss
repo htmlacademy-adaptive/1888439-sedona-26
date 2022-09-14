@@ -125,7 +125,7 @@
   .field-group--checkbox-group .field-group__list {
     padding-block: 31px;
     padding-inline-start: 19px;
-    grid-template-columns: repeat(4, max-content);
+    grid-template-columns:  192px 190px 173px 204px; // Pixel Perfect ))
     gap: 44px;
   }
 
