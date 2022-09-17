@@ -8,6 +8,7 @@
   padding-inline: 62px 20px;
 
   @include mixins.medium-font($case: none);
+  overflow-wrap: break-word;
 
   &::before {
     content: "";

@@ -10,13 +10,14 @@
 }
 
 .field-group__legend {
-  margin: 0;
+  margin-inline: auto;
   margin-block-end: 20px;
   padding: 0;
   padding-inline: 20px;
 
   @include mixins.medium-font;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .field-group__list {
@@ -51,7 +52,9 @@
     border-top: 1px solid #bdbdbd;
   }
 
-  .review-form__field-group.field-group {
+  .review-form__field-group.field-group,
+  .review-form__field-group:first-child.field-group,
+  .review-form__field-group:nth-child(2).field-group {
     border-bottom: none;
     padding-block-end: 0;
   }
@@ -75,10 +78,6 @@
     margin-block-end: 0;
   }
 
-  .row .field-group {
-    border-top: none;
-  }
-
   .field-group__legend {
     width: 400px;
     padding: 0;
@@ -87,12 +86,16 @@
     @include mixins.large-font-size;
   }
 
-  .row .field-group__legend {
-    width: auto;
-  }
-
   .field-group__list {
     padding: 0;
+  }
+
+  .row .field-group {
+    border-top: none;
+  }
+
+  .row .field-group__legend {
+    width: auto;
   }
 
   .row__column:first-child .field-group__list {
@@ -115,13 +118,17 @@
 
   .field-group--radio-group .field-group__list {
     grid-template-columns: repeat(3, 280px);
+    align-items: center;
     gap: 28px;
     padding-block: 17px;
+    padding-inline-start: 42px;
   }
 
   .field-group--checkbox-group .field-group__list {
     padding-block: 31px;
-    grid-template-columns: repeat(4, max-content);
+    padding-inline-start: 19px;
+    grid-template-columns: 193px 190px 173px 204px; // Pixel Perfect ))
+    align-items: center;
     gap: 44px;
   }
 

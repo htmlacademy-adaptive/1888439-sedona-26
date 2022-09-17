@@ -26,15 +26,21 @@
 
 .modal__text {
   padding: 45px;
-  padding-bottom: 30px;
+  padding-block-end: 28px;
+}
+
+.modal--wide .modal__text {
+  padding: 40px;
+  padding-block-end: 50px;
 }
 
 .modal__title {
   margin: 0;
-  margin-bottom: 20px;
+  margin-block-end: 25px;
 
-  @include mixins.large-font;
+  @include mixins.medium-font;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .modal__description {
@@ -42,29 +48,57 @@
 
   @include mixins.normal-font;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .modal__button-wrapper {
-  padding-bottom: 35px;
+  padding-inline: 70px;
+  padding-block-end: 35px;
 }
 
 .modal__button {
-  width: 180px;
+  width: 100%;
   margin: 0 auto;
 }
 
 .modal__button-wrapper--visible {
   padding: 20px;
   background-color: variables.$grey-color;
+}
 
-  .modal__button {
-    width: 100%;
-    margin: 0 auto;
-  }
+.modal__button-wrapper--visible .modal__button {
+  width: 100%;
+  margin: 0 auto;
 }
 
 @media (min-width: variables.$tablet-width) {
+  .modal__text {
+    padding: 48px;
+  }
+
   .modal__title {
+    margin-block-end: 22px;
+
     @include mixins.extra-large-font-size;
+  }
+
+  .modal__button-wrapper {
+    padding-inline: 64px;
+    padding-block-end: 51px;
+  }
+
+  .modal--wide .modal__text {
+    padding: 44px;
+    padding-inline: 97px;
+    padding-block-end: 52px;
+  }
+
+  .modal--wide .modal__title {
+    margin-block-end: 23px;
+  }
+
+  .modal--wide .modal__button-wrapper {
+    padding-inline: 91px;
+    padding-block: 44px;
   }
 }

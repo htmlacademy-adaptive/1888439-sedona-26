@@ -2,32 +2,15 @@
 
 .hero {
   padding-block: 52px 67px;
-  padding-inline: 45px;
+  background-color: #778591;
   background-position: left 50% bottom 0, center bottom;
   background-repeat: no-repeat, no-repeat;
-  background-size: auto, cover;
-
-  @supports (background-image: image-set(url("") type(""))) {
-    background-image:
-      var(--hero-triangle),
-      image-set(
-        url("../img/mountains/mountains-back-mobile@1x.webp") type("image/webp"),
-        url("../img/mountains/mountains-back-mobile@1x.jpg") type("image/jpeg")
-      );
-  }
+  background-size: auto, 901px 390px;
   background-image:
     var(--hero-triangle),
     url("../img/mountains/mountains-back-mobile@1x.jpg");
 
   @media (min-resolution: 2dppx) {
-    @supports (background-image: image-set(url("") type(""))) {
-      background-image:
-        var(--hero-triangle),
-        image-set(
-          url("../img/mountains/mountains-back-mobile@2x.webp") type("image/webp"),
-          url("../img/mountains/mountains-back-mobile@2x.jpg") type("image/jpeg")
-        );
-    }
     background-image:
       var(--hero-triangle),
       url("../img/mountains/mountains-back-mobile@2x.jpg");
@@ -37,41 +20,29 @@
 .hero--index {
   padding-block: 90px 85px;
   padding-inline: 20px;
+  margin-block-end: 34px;
 }
 
 .hero__content {
   display: block;
-  width: 460px;
-  max-width: 100%;
+  width: 229px;
   height: auto;
   margin: 0 auto;
+}
+
+.hero--index .hero__content {
+  width: 282px;
 }
 
 @media (min-width: variables.$tablet-width) {
   .hero {
     padding-block: 95px 117px;
-
-    @supports (background-image: image-set(url("") type(""))) {
-      background-image:
-        var(--hero-triangle),
-        image-set(
-          url("../img/mountains/mountains-back-desktop@1x.webp") type("image/webp"),
-          url("../img/mountains/mountains-back-desktop@1x.jpg") type("image/jpeg")
-        );
-    }
     background-image:
       var(--hero-triangle),
       url("../img/mountains/mountains-back-desktop@1x.jpg");
+    background-size: auto, 1200px 519px;
 
     @media (min-resolution: 2dppx) {
-      @supports (background-image: image-set(url("") type(""))) {
-        background-image:
-          var(--hero-triangle),
-          image-set(
-            url("../img/mountains/mountains-back-desktop@2x.webp") type("image/webp"),
-            url("../img/mountains/mountains-back-desktop@2x.jpg") type("image/jpeg")
-          );
-      }
       background-image:
         var(--hero-triangle),
         url("../img/mountains/mountains-back-desktop@2x.jpg");
@@ -80,6 +51,14 @@
 
   .hero--index {
     padding-block: 77px 91px;
+  }
+
+  .hero__content {
+    width: 457px;
+  }
+
+  .hero--index .hero__content {
+    width: 461px;
   }
 }
 
@@ -90,5 +69,9 @@
 
   .hero--index {
     padding-block: 77px 91px;
+  }
+
+  .hero__content {
+    width: 460px;
   }
 }

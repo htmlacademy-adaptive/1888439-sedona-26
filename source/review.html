@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="page" lang="ru">
+<html class="page page--review-form" lang="ru">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,10 +18,14 @@
     <link rel="icon" type="image/png" sizes="96x96" href="img/favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
     <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest.webmanifest">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="img/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <link rel="preload" href="fonts/ptsans.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/ptsansbold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/ptsans.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="fonts/ptsansbold.woff" as="font" type="font/woff" crossorigin="anonymous">
     <title>Форма отзыва</title>
     <link rel="stylesheet" href="css/styles.min.css">
   </head>
@@ -34,7 +38,8 @@
         </a>
 
         <nav class="main-header__navigation main-navigation">
-          <ul class="main-navigation__list main-navigation__list--closed">
+          <!-- Класс для скрытия навигации .main-navigation__list--closed -->
+          <ul class="main-navigation__list">
             <li class="main-navigation__item">
               <a class="main-navigation__link" href="index.html">Главная</a>
             </li>
@@ -45,10 +50,11 @@
               <a class="main-navigation__link main-navigation__link--current">Форма отзыва</a>
             </li>
             <li class="main-navigation__item">
-              <a class="main-navigation__link" href="https://htmlacademy.ru" target="_blank">Html academy</a>
+              <a class="main-navigation__link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">Html academy</a>
             </li>
           </ul>
-          <button class="main-navigation__toggle-button" type="button"><span class="visually-hidden">Открыть меню</span></button>
+          <!-- main-navigation__toggle-button--invisible - класс для скрытия кнопки меню, если не загружен js -->
+          <button class="main-navigation__toggle-button main-navigation__toggle-button--invisible" type="button"><span class="visually-hidden">Открыть меню</span></button>
         </nav>
       </header>
 
@@ -58,7 +64,7 @@
         </div>
 
         <h1 class="page__title heading">Оставьте свой отзыв</h1>
-        <p class="page__description section-description">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
+        <p class="page__description section-description">Помогите нашим отелям стать лучше! оставьте отзыв о них, а&nbsp;также о посещенных вами достопримечательностях</p>
 
         <form class="review-form" action="https://echo.htmlacademy.ru" method="post">
           <h2 class="visually-hidden">Форма отзыва</h2>
@@ -137,7 +143,7 @@
               <li class="field-group__item">
                 <div class="checkbox-field">
                   <input class="checkbox-field__input visually-hidden" type="checkbox" name="devils-bridge" id="devils-bridge" checked>
-                  <label class="checkbox-field__label" for="devils-bridge">Мост дьявола</label>
+                  <label class="checkbox-field__label" for="devils-bridge">Мост Дьявола</label>
                 </div>
               </li>
               <li class="field-group__item">
@@ -205,7 +211,7 @@
           </li>
         </ul>
 
-        <a class="main-footer__html-academy-logo html-academy-logo" href="https://htmlacademy.ru" target="_blank">
+        <a class="main-footer__html-academy-logo html-academy-logo" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
           Разработано
           <svg class="html-academy-logo__image" width="27" height="34">
             <title>Логотип HTML Academy</title>
@@ -218,7 +224,7 @@
     <div class="modal modal--closed">
       <section class="modal__content">
         <div class="modal__text">
-          <h2 class="modal__title">Что-то пошло не так!</h2>
+          <h2 class="modal__title">Что-то пошло не&nbsp;так!</h2>
           <p class="modal__description">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
         </div>
         <div class="modal__button-wrapper">
@@ -231,7 +237,7 @@
       <section class="modal__content">
         <div class="modal__text">
           <h2 class="modal__title">Ваш отзыв отправлен!</h2>
-          <p class="modal__description">Спасибо за ваше участие, ваш отзыв уже поступил к нам. В ближайшее время мы опубликуем его на сайте.</p>
+          <p class="modal__description">Спасибо за ваше участие, ваш отзыв уже поступил к нам. В&nbsp;ближайшее время мы опубликуем его на сайте.</p>
         </div>
         <div class="modal__button-wrapper modal__button-wrapper--visible">
           <button class="modal__button button" type="button">Закрыть окно</button>

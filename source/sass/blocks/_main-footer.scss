@@ -4,10 +4,8 @@
 @use "./socials";
 
 .main-footer {
-  padding-top: 40px;
-  padding-right: 20px;
-  padding-bottom: 23px;
-  padding-left: 20px;
+  padding-block: 28px 23px;
+  padding-inline: 20px;
 }
 
 .main-footer__hashtag {
@@ -15,6 +13,7 @@
   margin: 0;
   margin-bottom: 34px;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .main-footer__socials-list {
@@ -24,8 +23,9 @@
 
 @media (min-width: variables.$tablet-width) {
   .main-footer {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     align-items: center;
     padding-block: 36px;
     padding-inline: 60px;
@@ -33,10 +33,18 @@
 
   .main-footer__hashtag {
     margin: 0;
+    grid-column: 1;
+    justify-self: start;
   }
 
   .main-footer__socials-list {
     margin: 0;
+    grid-column: 2 / 4;
+  }
+
+  .main-footer__html-academy-logo {
+    grid-column: 4;
+    justify-self: end;
   }
 }
 

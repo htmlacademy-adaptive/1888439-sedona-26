@@ -1,9 +1,9 @@
 @use "./variables";
 
 :root {
-  --menu-button-open: url("data:image/svg+xml,%3Csvg width='24' height='20' viewBox='0 0 24 20' fill='%2381B3D2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 0H0v4h24V0Zm0 8H0v4h24V8Zm0 8H0v4h24v-4Z'/%3E%3C/svg%3E");
-  --menu-button-close: url("data:image/svg+xml,%3Csvg width='26' height='25' viewBox='0 0 26 25' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26 3.153 22.72 0 13 9.347 3.28 0 0 3.153 9.72 12.5 0 21.847 3.28 25 13 15.653 22.72 25 26 21.847 16.28 12.5 26 3.153Z'/%3E%3C/svg%3E");
-  --hero-triangle: url("data:image/svg+xml,%3Csvg width='1200' height='57' viewBox='0 0 1200 57' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M249.62 23.7 0 0v57h600.05L249.62 0v23.7Zm700.86 0V0L600.05 57H1200V0L950.48 23.7Z'/%3E%3C/svg%3E");
+  --menu-button-open: #{variables.$menu-button-open};
+  --menu-button-close: #{variables.$menu-button-close};
+  --hero-triangle: #{variables.$hero-triangle};
 }
 
 html,
@@ -13,6 +13,7 @@ body {
 
 body {
   margin: 0;
+  padding: 0;
   background-color: variables.$grey-color;
 }
 

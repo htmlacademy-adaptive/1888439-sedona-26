@@ -4,34 +4,38 @@
 
 .suggestion {
   padding-top: 17px;
+  padding-inline: 20px;
 }
 
 .suggestion__title {
   margin: 0 auto;
-  margin-bottom: 30px;
-  padding-inline: 20px;
+  margin-block-end: 27px;
   max-width: 445px;
 
-  @include mixins.large-font;
+  @include mixins.medium-font;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .suggestion__description {
   margin: 0 auto;
-  margin-bottom: 38px;
-  padding-inline: 20px;
+  margin-block-end: 39px;
+  padding-inline: 5px;
   max-width: 445px;
 
   @include mixins.normal-font;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 @media (min-width: variables.$tablet-width) {
   .suggestion {
-    padding-block: 58px 40px;
+    padding-block: 50px 42px;
   }
 
   .suggestion__title {
+    margin-block-end: 25px;
+
     @include mixins.extra-large-font-size;
   }
 
@@ -42,11 +46,19 @@
   }
 
   .suggestion__description {
-    margin-bottom: 66px;
+    margin-block-end: 88px;
   }
 }
 
 @media (min-width: variables.$desktop-width) {
+  .suggestion {
+    padding-block: 52px 84px;
+  }
+
+  .suggestion__description {
+    margin-block-end: 86px;
+  }
+
   .suggestion__video {
     width: 800px;
   }

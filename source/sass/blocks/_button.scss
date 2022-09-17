@@ -8,6 +8,7 @@
   @include mixins.large-font(variables.$white);
   text-decoration: none;
   text-align: center;
+  overflow-wrap: break-word;
 
   background-color: variables.$main-color;
   border: none;
@@ -32,5 +33,20 @@
   &--disabled:active {
     color: variables.$white;
     background-color: variables.$disabled-button-color;
+  }
+}
+
+.modal__button.button {
+  font-size: 18px;
+}
+
+@media (min-width: variables.$tablet-width) {
+  .review-form__submit-button.button {
+    padding-block: 20px 12px;
+    padding-inline-end: 32px;
+  }
+
+  .modal__button.button {
+    font-size: 21px;
   }
 }

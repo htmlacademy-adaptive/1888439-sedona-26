@@ -1,1 +1,12 @@
+@use "../variables";
 @use "./map";
+
+.location {
+  padding-block-end: 11px;
+}
+
+@media (min-width: variables.$tablet-width) {
+  .location {
+    padding-block-end: 0;
+  }
+}

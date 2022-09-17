@@ -86,20 +86,24 @@ const optimizeImages = () => (
 );
 
 const webp = () => (
-  gulp.src(`${SOURCE_DIR}/img/**/*.{jpg,jpeg,png}`)
+  gulp.src([
+      `${SOURCE_DIR}/img/**/*.{jpg,jpeg,png}`,
+      `!${SOURCE_DIR}/img/favicons/*`,
+      `!${SOURCE_DIR}/img/mountains/*`,
+    ])
     .pipe(squoosh({ webp: {} }))
     .pipe(gulp.dest(`${BUILD_DIR}/img`))
 );
 
 // Svg
 const optimizeSvg = () => (
-  gulp.src(`${SOURCE_DIR}/img/**/*.svg`)
+  gulp.src([`${SOURCE_DIR}/img/**/*.svg`, `!${SOURCE_DIR}/img/icons/*`])
     .pipe(svgo())
     .pipe(gulp.dest(`${BUILD_DIR}/img`))
 );
 
 const svgSprite = () => (
-  gulp.src(`${SOURCE_DIR}/img/**/*.svg`)
+  gulp.src(`${SOURCE_DIR}/img/icons/*.svg`)
     .pipe(svgo({
       plugins: [
         {
@@ -125,7 +129,7 @@ const copyFonts = () => (
 const others = () => (
   gulp.src([
     `${SOURCE_DIR}/*.ico`,
-    `${SOURCE_DIR}/manifest.json`,
+    `${SOURCE_DIR}/manifest.webmanifest`,
     `${SOURCE_DIR}/browserconfig.xml`,
   ]).pipe(gulp.dest(BUILD_DIR))
 );
