@@ -70,7 +70,7 @@
 }
 
 .main-navigation__toggle-button:is(:hover, :focus-visible) {
-  opacity: 0.6;
+  filter: opacity(0.6);
 }
 
 .main-navigation__toggle-button:focus-visible {
@@ -78,7 +78,7 @@
 }
 
 .main-navigation__toggle-button:active {
-  opacity: 0.3;
+  filter: opacity(0.3);
 }
 
 @media (min-width: variables.$tablet-width) {

@@ -10,7 +10,7 @@
 }
 
 .field-group__legend {
-  margin: 0;
+  margin-inline: auto;
   margin-block-end: 20px;
   padding: 0;
   padding-inline: 20px;
@@ -77,10 +77,6 @@
     margin-block-end: 0;
   }
 
-  .row .field-group {
-    border-top: none;
-  }
-
   .field-group__legend {
     width: 400px;
     padding: 0;
@@ -89,12 +85,16 @@
     @include mixins.large-font-size;
   }
 
-  .row .field-group__legend {
-    width: auto;
-  }
-
   .field-group__list {
     padding: 0;
+  }
+
+  .row .field-group {
+    border-top: none;
+  }
+
+  .row .field-group__legend {
+    width: auto;
   }
 
   .row__column:first-child .field-group__list {
@@ -125,7 +125,7 @@
   .field-group--checkbox-group .field-group__list {
     padding-block: 31px;
     padding-inline-start: 19px;
-    grid-template-columns: 192px 190px 173px 204px; // Pixel Perfect ))
+    grid-template-columns: 193px 190px 173px 204px; // Pixel Perfect ))
     gap: 44px;
   }
 
