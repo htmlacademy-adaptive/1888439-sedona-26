@@ -5,27 +5,28 @@
 .photo {
   display: flex;
   flex-direction: column;
-  padding-top: 24px;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-block-start: 24px;
+  padding-inline: 20px;
 }
 
 .photo__description {
-  padding-top: 15px;
-  padding-bottom: 25px;
+  padding-block: 15px 25px;
 }
 
 .photo__title {
   margin: 0;
+  margin-block-end: 1px;
 
   @include mixins.normal-font(variables.$black, 700);
+  overflow-wrap: break-word;
 }
 
 .photo__author {
   margin: 0;
-  margin-bottom: 11px;
+  margin-block-end: 11px;
 
   @include mixins.normal-font($case: none);
+  overflow-wrap: break-word;
 }
 
 .photo__image-link {
@@ -50,7 +51,7 @@
 
   .photo__description {
     display: grid;
-    grid-template-columns: 1fr max-content;
+    grid-template-columns: 1fr 80px;
     grid-template-rows: repeat(2, min-content);
     column-gap: 20px;
     padding-inline: 20px;
@@ -67,6 +68,7 @@
     grid-row: 1 / -1;
     justify-self: end;
     align-self: center;
+    margin-block-end: 5px;
   }
 
   .gallery__item:first-child .photo__image {
@@ -84,7 +86,13 @@
     bottom: 0;
     left: 0;
     right: 0;
+    max-height: 60%;
     background-color: rgba(variables.$black, 0.3);
+    overflow-y: auto;
+  }
+
+  .photo__like {
+    margin-block-end: 2px;
   }
 
   .photo__title {

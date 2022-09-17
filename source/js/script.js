@@ -5,12 +5,22 @@ const toggleMenu = ({currentTarget}) => {
   menuElement.classList.toggle('main-navigation__list--closed');
 };
 
+const handleMapError = ({target}) => {
+  target.classList.add('map__content--invisible');
+};
+
 const contentLoadedHandler = () => {
   const mainMenu = document.querySelector('.main-navigation__list');
   mainMenu.classList.add('main-navigation__list--closed');
 
   const mainMenuToggleButton = document.querySelector('.main-navigation__toggle-button');
+  mainMenuToggleButton.classList.remove('main-navigation__toggle-button--invisible');
   mainMenuToggleButton.addEventListener('click', toggleMenu);
+
+  const mapIframe = document.querySelector('.map__content');
+  if (mapIframe) {
+    mapIframe.addEventListener('error', handleMapError);
+  }
 };
 
 document.addEventListener('DOMContentLoaded', contentLoadedHandler);

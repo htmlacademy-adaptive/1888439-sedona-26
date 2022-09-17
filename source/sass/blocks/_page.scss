@@ -17,6 +17,7 @@
 
   @include mixins.medium-font;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .page--review-form .page__hero {
@@ -44,6 +45,7 @@
 
   @include mixins.normal-font;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 @media (min-width: variables.$tablet-width) {

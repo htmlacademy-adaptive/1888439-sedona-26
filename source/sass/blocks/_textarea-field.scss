@@ -15,10 +15,6 @@
   text-align: center;
 }
 
-// .textarea-field__label:hover ~ .textarea-field__input {
-//   background-color: variables.$grey-color;
-// }
-
 .textarea-field__input {
   box-sizing: border-box;
   display: block;
@@ -66,6 +62,7 @@
     margin-block-end: 28px;
 
     @include mixins.large-font-size;
+    overflow-wrap: break-word;
   }
 
   .textarea-field__label-decoration {

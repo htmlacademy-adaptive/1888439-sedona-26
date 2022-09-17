@@ -14,23 +14,28 @@
 
   @include mixins.medium-font;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .suggestion__description {
   margin: 0 auto;
-  margin-bottom: 38px;
+  margin-block-end: 39px;
+  padding-inline: 5px;
   max-width: 445px;
 
   @include mixins.normal-font;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 @media (min-width: variables.$tablet-width) {
   .suggestion {
-    padding-block: 52px 42px;
+    padding-block: 50px 42px;
   }
 
   .suggestion__title {
+    margin-block-end: 25px;
+
     @include mixins.extra-large-font-size;
   }
 

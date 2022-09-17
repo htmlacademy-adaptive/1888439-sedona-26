@@ -40,6 +40,7 @@
 
   @include mixins.medium-font;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .modal__description {
@@ -47,6 +48,7 @@
 
   @include mixins.normal-font;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .modal__button-wrapper {

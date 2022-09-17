@@ -17,6 +17,7 @@
 
   @include mixins.medium-font;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .field-group__list {
@@ -117,6 +118,7 @@
 
   .field-group--radio-group .field-group__list {
     grid-template-columns: repeat(3, 280px);
+    align-items: center;
     gap: 28px;
     padding-block: 17px;
     padding-inline-start: 42px;
@@ -126,6 +128,7 @@
     padding-block: 31px;
     padding-inline-start: 19px;
     grid-template-columns: 193px 190px 173px 204px; // Pixel Perfect ))
+    align-items: center;
     gap: 44px;
   }
 

@@ -38,6 +38,7 @@
         </a>
 
         <nav class="main-header__navigation main-navigation">
+          <!-- Класс для скрытия навигации .main-navigation__list--closed -->
           <ul class="main-navigation__list">
             <li class="main-navigation__item">
               <a class="main-navigation__link" href="index.html">Главная</a>
@@ -49,10 +50,11 @@
               <a class="main-navigation__link" href="review.html">Форма отзыва</a>
             </li>
             <li class="main-navigation__item">
-              <a class="main-navigation__link" href="https://htmlacademy.ru" target="_blank">Html academy</a>
+              <a class="main-navigation__link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">Html academy</a>
             </li>
           </ul>
-          <button class="main-navigation__toggle-button" type="button"><span class="visually-hidden">Открыть меню</span></button>
+          <!-- main-navigation__toggle-button--invisible - класс для скрытия кнопки меню, если не загружен js -->
+          <button class="main-navigation__toggle-button main-navigation__toggle-button--invisible" type="button"><span class="visually-hidden">Открыть меню</span></button>
         </nav>
       </header>
 
@@ -222,7 +224,7 @@
           </li>
         </ul>
 
-        <a class="main-footer__html-academy-logo html-academy-logo" href="https://htmlacademy.ru" target="_blank">
+        <a class="main-footer__html-academy-logo html-academy-logo" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
           Разработано
           <svg class="html-academy-logo__image" width="27" height="34">
             <title>Логотип HTML Academy</title>

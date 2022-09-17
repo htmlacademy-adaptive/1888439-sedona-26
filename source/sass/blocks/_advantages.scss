@@ -10,6 +10,7 @@
 
   @include mixins.normal-font;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .advantages__list {
@@ -93,6 +94,7 @@
 
   @include mixins.medium-font;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .advantages__description {
@@ -100,6 +102,7 @@
 
   @include mixins.normal-font;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 :is(.advantages__item--big, .advantages__item--medium) :is(.advantages__title, .advantages__description) {
@@ -187,11 +190,19 @@
     margin-bottom: 45px;
   }
 
+  .advantages__text-content,
+  .advantages__item--enum-start .advantages__text-content,
+  .advantages__item--enum-end .advantages__text-content {
+    padding-inline: 50px;
+  }
+
   .advantages__item--medium .advantages__text-content {
     padding-block: 39px 43px;
+    padding-inline: 60px;
   }
 
   .advantages__item--big .advantages__text-content {
     padding-block: 32px 42px;
+    padding-inline: 60px;
   }
 }

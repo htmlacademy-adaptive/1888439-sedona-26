@@ -8,6 +8,7 @@
   @include mixins.large-font(variables.$white);
   text-decoration: none;
   text-align: center;
+  overflow-wrap: break-word;
 
   background-color: variables.$main-color;
   border: none;
@@ -44,10 +45,8 @@
     padding-block: 20px 12px;
     padding-inline-end: 32px;
   }
-}
 
-@media (min-width: variables.$desktop-width) {
   .modal__button.button {
-    font-size: 26px;
+    font-size: 21px;
   }
 }

@@ -15,6 +15,7 @@
 
   @include mixins.large-font;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .booking__description {
@@ -24,6 +25,7 @@
 
   @include mixins.normal-font;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .booking__button {

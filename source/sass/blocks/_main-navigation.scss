@@ -35,12 +35,16 @@
 }
 
 .main-navigation__link {
-  @include mixins.medium-font(variables.$white);
+  box-sizing: border-box;
   display: block;
+  height: 100%;
   padding-block: 17px 12px;
   padding-inline: 50px;
+
+  @include mixins.medium-font(variables.$white);
   text-decoration: none;
   cursor: pointer;
+  overflow-wrap: break-word;
 
   &:hover,
   &:focus-visible {
@@ -61,12 +65,16 @@
   padding: 0;
   width: 50px;
   height: 50px;
-  background: none;
   border: none;
+  background-color: transparent;
   background-image: var(--menu-button-close);
   background-size: 22px;
   background-position: center top 19px;
   background-repeat: no-repeat;
+}
+
+.main-navigation__toggle-button--invisible {
+  display: none;
 }
 
 .main-navigation__toggle-button:is(:hover, :focus-visible) {

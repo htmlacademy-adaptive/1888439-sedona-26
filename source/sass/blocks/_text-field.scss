@@ -6,6 +6,7 @@
   padding-inline-start: 15px;
 
   @include mixins.normal-font;
+  overflow-wrap: break-word;
 }
 
 .text-field__input {
