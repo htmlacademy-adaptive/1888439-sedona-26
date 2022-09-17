@@ -91,7 +91,7 @@
   }
 
   .subadvantages__title {
-    margin-block-end: 25px;
+    margin-block-end: 22px;
 
     @include mixins.large-font-size;
     text-align: center;
@@ -99,5 +99,12 @@
 
   .subadvantages__description {
     text-align: center;
+  }
+}
+
+@media (min-width: variables.$desktop-width) {
+  .subadvantages__item,
+  .subadvantages__item:is(:first-child, :last-child) {
+    padding-inline: 50px;
   }
 }
