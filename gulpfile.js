@@ -48,6 +48,7 @@ const optimizeHtml = () => (
   gulp.src(`${SOURCE_DIR}/*.html`)
     .pipe(htmlmin({
       collapseWhitespace: true,
+      conservativeCollapse: true,
       removeComments: true,
     }))
     .pipe(gulp.dest(BUILD_DIR))
