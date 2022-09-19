@@ -1,6 +1,21 @@
 @use "../variables";
 @use "../mixins";
 
+.page__container {
+  display: flex;
+  flex-direction: column;
+  max-width: variables.$desktop-width;
+  margin-block: 0;
+  margin-inline: auto;
+  min-height: 100%;
+  background-color: variables.$white;
+  box-shadow: 0 5px 15px rgba(0, 1, 1, 0.2);
+}
+
+.page__main {
+  flex-grow: 1;
+}
+
 .page__hero {
   margin-block-end: 32px;
 }
@@ -10,8 +25,8 @@
 }
 
 .page__title {
-  margin: 0 auto;
-  margin-block-end: 25px;
+  margin-block: 0 25px;
+  margin-inline: auto;
   max-width: 500px;
   padding-inline: 20px;
 
@@ -40,8 +55,8 @@
 .page__description {
   padding-inline: 20px;
   max-width: 445px;
-  margin: 0 auto;
-  margin-block-end: 36px;
+  margin-block: 0 36px;
+  margin-inline: auto;
 
   @include mixins.normal-font;
   text-align: center;
