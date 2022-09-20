@@ -1,9 +1,10 @@
 .logo {
-  display: inline-block;
+  display: block;
 }
 
 .logo__image {
   display: block;
+  margin-inline: auto;
 }
 
 .logo:hover .logo__image,
