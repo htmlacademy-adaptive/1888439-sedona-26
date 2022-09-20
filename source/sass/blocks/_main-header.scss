@@ -14,14 +14,19 @@
 }
 
 .main-header__navigation {
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
+  margin-block-start: 96px;
 
+  &--js-enabled {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-block-start: 0;
+  }
+}
 
 @media (min-width: variables.$tablet-width) {
   .main-header__navigation {
+    margin-block-start: 0;
     position: static;
   }
 }
