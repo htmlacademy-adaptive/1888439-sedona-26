@@ -7,20 +7,25 @@
   min-height: 56px;
 }
 
-.main-header__logo {
+.main-header--js-enabled .main-header__logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.main-header__navigation {
+.main-header--js-enabled .main-header__navigation {
   position: absolute;
   top: 0;
   width: 100%;
 }
 
-
 @media (min-width: variables.$tablet-width) {
+  .main-header__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .main-header__navigation {
     position: static;
   }

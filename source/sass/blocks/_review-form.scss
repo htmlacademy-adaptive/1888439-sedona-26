@@ -74,6 +74,11 @@
   .review-form__emotions-field {
     margin-block: -5px 23px;
   }
+
+  .review-form__submit-button.button {
+    padding-block: 20px 12px;
+    padding-inline-end: 32px;
+  }
 }
 
 @media (min-width: variables.$desktop-width) {

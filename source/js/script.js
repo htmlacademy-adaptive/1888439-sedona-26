@@ -10,10 +10,13 @@ const handleMapError = ({target}) => {
 };
 
 const contentLoadedHandler = () => {
-  const mainMenu = document.querySelector('.main-navigation__list');
+  const mainHeader = document.querySelector('.main-header');
+  mainHeader.classList.add('main-header--js-enabled');
+
+  const mainMenu = mainHeader.querySelector('.main-navigation__list');
   mainMenu.classList.add('main-navigation__list--closed');
 
-  const mainMenuToggleButton = document.querySelector('.main-navigation__toggle-button');
+  const mainMenuToggleButton = mainHeader.querySelector('.main-navigation__toggle-button');
   mainMenuToggleButton.classList.remove('main-navigation__toggle-button--invisible');
   mainMenuToggleButton.addEventListener('click', toggleMenu);
 
